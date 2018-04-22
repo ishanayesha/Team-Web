@@ -1,0 +1,23 @@
+<div class="wrapper">
+
+  <!--left-fixed -navigation-->
+  <app-sidebar [toggleSideBar]="toggleSideBar"></app-sidebar>
+
+
+  <!-- Page Content Holder -->
+  <div id="content">
+
+    <!-- header-starts -->
+    <app-navbar (notify)="onClickSideBar($event)"></app-navbar>
+
+    <router-outlet></router-outlet>
+
+
+
+
+    <!--footer-->
+    <app-footer></app-footer>
+
+  </div>
+  
+</div>
