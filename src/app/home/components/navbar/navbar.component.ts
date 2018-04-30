@@ -9,15 +9,18 @@ export class NavbarComponent implements OnInit {
 
   constructor() { }
 
+  navbarHeader: boolean = false;
+
   ngOnInit() {
   }
 
-  toggleSideBar:boolean;
-  @Output() notify: EventEmitter<boolean>=new EventEmitter<boolean>();
+  toggleSideBar: boolean;
+  @Output() notify: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   toggleSideMenu() {
 
     this.toggleSideBar = !this.toggleSideBar;
     this.notify.emit(this.toggleSideBar);
+    this.navbarHeader = !this.navbarHeader;;
   }
 }

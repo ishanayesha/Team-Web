@@ -1,0 +1,32 @@
+.navbar-profile{
+    width: 305px;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.navbar-profile-session
+{
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.icon-size
+{
+    font-size: 87px;
+}
+
+.navbar-toggle {
+    border: none;
+    background: transparent !important;
+}
+
+#navheader{
+    margin-left: 2em;
+}
+
+nav{
+    -webkit-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.35);
+    -moz-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.35);
+    box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.35);
+}
