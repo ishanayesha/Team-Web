@@ -11,6 +11,7 @@
 }
 
 .card-container.card {
+    margin-top: 8%;
     max-width: 350px;
     padding: 40px 40px;
 }

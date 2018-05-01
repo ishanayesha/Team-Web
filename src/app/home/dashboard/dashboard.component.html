@@ -1,22 +1,96 @@
 <div class="row">
 
+  <!-- pie chart -->
   <div class="col-md-8">
-    <div class="panel panel-theme card">
+    <div class="panel panel-theme card panel-danger">
       <div class="panel-heading">Spring Summary</div>
       <div class="panel-body">
 
         <app-pie-chart [data]="data1" [config]="config1" [elementId]="elementId1"></app-pie-chart>
-        
+
       </div>
     </div>
   </div>
 
+  <!-- details panel -->
   <div class="col-md-4">
-    <div class="panel panel-theme panel-primary">
+    <div class="panel panel-theme panel-info card">
       <div class="panel-heading">Heading</div>
-      <div class="panel-body">Panel content</div>
+      <div class="panel-body">
+
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>Current Sprint</td>
+              <td>46</td>
+            </tr>
+            <tr>
+              <td>Days Remaining</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td>Start Date</td>
+              <td>2018-04-18</td>
+            </tr>
+            <tr>
+              <td>End Date</td>
+              <td>2018-04-18</td>
+            </tr>
+            <tr>
+              <td>Cod Fereze</td>
+              <td>2018-04-18</td>
+            </tr>
+            <tr>
+              <td>Hand Over</td>
+              <td>2018-04-18</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
     </div>
   </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+
+    <div class="panel panel-theme card panel-success">
+      <div class="panel-heading">Today Leave Details</div>
+      <div class="panel-body">
+        <!--Table-->
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Leave Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6"></div>
 </div>
 
 
