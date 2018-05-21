@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IssuesComponent implements OnInit {
 
+  showFilters: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  filtersVisibility() {
+    this.showFilters = !this.showFilters;
   }
 
 }

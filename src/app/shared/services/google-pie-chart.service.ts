@@ -13,7 +13,8 @@ export class GooglePieChartService extends GoogleChartsBaseService {
     var chartFunc = () => { return new google.visualization.PieChart(document.getElementById(<string>elementId)); };
     var options = {
             title: config.title,
-            pieHole: config.pieHole
+            pieHole: config.pieHole,
+            is3D: true
       };
 
     this.buildChart(data, chartFunc, options);

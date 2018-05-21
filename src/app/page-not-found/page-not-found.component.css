@@ -1,0 +1,50 @@
+/*-- 404 page --*/
+
+.error-pag h2:before {
+    content: "\f29c";
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 26rem;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    left: 0;
+    line-height: 1;
+    margin-top: -13rem;
+    opacity: .2;
+    position: absolute;
+    right: 0;
+    text-rendering: auto;
+    top: 50%;
+    -webkit-font-smoothing: antialiased;
+    color: black;
+}
+
+.error-page h2 {
+    font-size: 100px;
+    color: #629aa9;
+}
+.error-page {
+    background: #fff;
+	padding:2em 0;
+    text-align: center;
+}
+
+.error-page h3 {
+    color: #888;
+    margin-bottom: 1em;
+}
+
+.error-page h3 i.fa {
+    color: #F2B33F;
+}
+.error-page p {
+    letter-spacing: 1px;
+	width:40%;
+	margin: 30px auto 0; 
+    line-height: 28px;
+    color: #444;
+}
+/*--//404 page--*/

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { PieChartConfig } from '../../../shared/models/PieChartConfig';
-import { GooglePieChartService } from '../../../shared/services/google-pie-chart.service';
+import { PieChartConfig } from '../../../../shared/models/PieChartConfig';
+import { GooglePieChartService } from '../../../../shared/services/google-pie-chart.service';
 
 @Component({
   selector: 'app-pie-chart',
@@ -13,10 +13,18 @@ export class PieChartComponent implements OnInit {
   @Input() config: PieChartConfig;
   @Input() elementId: string;
 
+  width: number;
+
   constructor(private _pieChartService: GooglePieChartService) { }
 
   ngOnInit(): void {
+    this.width=window.screen.width*5/100;
     this._pieChartService.BuildPieChart(this.elementId, this.data, this.config);
+    
   }
 
+  //resize when screen size change
+  onResize() {
+    this._pieChartService.BuildPieChart(this.elementId, this.data, this.config);
+  }
 }

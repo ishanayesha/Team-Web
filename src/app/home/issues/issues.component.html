@@ -1,3 +1,81 @@
-<p>
-  issues works!
-</p>
+<div>
+  <ul class="breadcrumb">
+    <li>All Issues<span><i class="fa fa-angle-double-right"></i></span></li>
+  </ul>
+</div>
+
+<div id="main-min-height">
+  <div class="page-content">
+
+    <div class="page-title">
+      <h4>
+        All Allocation
+        <span>
+            <button (click)="filtersVisibility()" class=""><span class="glyphicon glyphicon-filter"></span> Filter</button>
+        </span>
+      </h4>
+    </div>
+
+    <div class="page-body">
+
+      <table id="filter-table" class="table" *ngIf="showFilters">
+        <tr class="filter-text-fileds">
+          <th><input type="text" class="form-control" placeholder="Jira ID"></th>
+          <th><input type="text" class="form-control" placeholder="First Name"></th>
+          <th><input type="text" class="form-control" placeholder="Last Name"></th>
+          <th><input type="text" class="form-control" placeholder="Username"></th>
+        </tr>
+      </table>
+
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Jira ID</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th style="text-align: center">Status</th>
+            <th>Dev</th>
+            <th>QA</th>
+            <th style="text-align: center">Allocation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>VH-8894</td>
+            <td>Story</td>
+            <td>Pegasus web checkout issue</td>
+            <td style="background: red;text-align: center">Open</td>
+            <td>Ishan</td>
+            <td>Ishan</td>
+            <td style="text-align: center"><i class="glyphicon glyphicon-new-window"></i></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>VH-8894</td>
+            <td>Story</td>
+            <td>Pegasus web checkout issue</td>
+            <td style="background: green;text-align: center">Open</td>
+            <td>Ishan</td>
+            <td>Ishan</td>
+            <td style="text-align: center"><i class="glyphicon glyphicon-new-window"></i></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>VH-8894</td>
+            <td>Story</td>
+            <td>Pegasus web checkout issue</td>
+            <td style="background: yellow;text-align: center">Open</td>
+            <td>Ishan</td>
+            <td>Ishan</td>
+            <td style="text-align: center"><i class="glyphicon glyphicon-new-window"></i></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+    </div>
+  </div>
+</div>

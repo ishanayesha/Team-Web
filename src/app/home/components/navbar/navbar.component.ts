@@ -9,8 +9,6 @@ export class NavbarComponent implements OnInit {
 
   constructor() { }
 
-  navbarHeader: boolean = false;
-
   ngOnInit() {
   }
 
@@ -21,6 +19,5 @@ export class NavbarComponent implements OnInit {
 
     this.toggleSideBar = !this.toggleSideBar;
     this.notify.emit(this.toggleSideBar);
-    this.navbarHeader = !this.navbarHeader;;
   }
 }

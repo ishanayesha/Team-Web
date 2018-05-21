@@ -1,0 +1,8 @@
+#filter-table th{
+    border-top: none !important;
+}
+
+.filter-text-fileds{
+    background: #f8f8f8;
+    border: none;
+}

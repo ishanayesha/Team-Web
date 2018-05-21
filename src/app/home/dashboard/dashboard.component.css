@@ -1,9 +1,90 @@
+.dashboard-blue-card{
+    background-color: #64b5f6;
+    color: white;
+    border: 5px solid #f8f8f8;
+    margin: 0 0 1.53846rem;
+    padding: 2em;
+}
+
 .card{
     border-radius: 2px;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12); 
-    transition: box-shadow .25s; 
+    transition: box-shadow .25s;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    background: white;
 }
 
 .card:hover {
     box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  }
+}
+
+.card-content{
+    padding: 1em;
+    width: 100%;
+}
+
+.card-title{
+    color: black;
+    padding: .76923rem 1.53846rem;
+    background: #d9dfeb;
+}
+
+.card-title h4{
+    font-family: Oxygen,sans-serif;
+    letter-spacing: .01em;
+    margin-left: .5em;
+    margin-right: .5em;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.card-title h4 span{
+    float: right;
+    font-weight: normal;
+}
+
+.card-title h4 span button{
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    padding: 4px 12px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin-top: -12px;
+}
+
+.card-title button span{
+    margin-left: .5em;
+}
+
+.leave-bubble {
+	position: relative;
+	background: #00aabb;
+    border-radius: .4em;
+    position: absolute;
+    min-width: 300px;
+    min-height: 250px;
+    top: 60px;
+}
+
+.leave-bubble:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 70%;
+	width: 0;
+	height: 0;
+	border: 49px solid transparent;
+	border-bottom-color: #00aabb;
+	border-top: 0;
+	border-right: 0;
+	margin-left: -14px;
+	margin-top: -28px;
+}
+
+.add-leave{
+    margin-right: 300px;
+    float: right
+}

@@ -4,15 +4,22 @@
     padding-bottom: 0px;
 }
 
-.navbar-profile-session
-{
+.navbar-profile-session{
     padding: 10px;
     padding-bottom: 0px;
     padding-top: 0px;
 }
 
-.icon-size
-{
+.navbar-header a{
+    color: black;
+    margin-left: 1em;
+}
+
+.navbar-links{
+    color: black;
+}
+
+.icon-size{
     font-size: 87px;
 }
 
@@ -26,7 +33,7 @@
 }
 
 nav{
-    -webkit-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.35);
-    -moz-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.35);
-    box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.35);
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.35);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.35);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.35);
 }

@@ -6,10 +6,10 @@
     min-width: 250px;
     max-width: 250px;
     height: 100%;
-    background: #1E292E;
-    color: #9d9d9d;
+    background: #D8DDE4;
     transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
     transform-origin: bottom left;
+    border-right: 1px solid #bec9dc; 
 }
 
 #sidebar.active {
@@ -19,38 +19,39 @@
 
 #sidebar .sidebar-header {
     padding: 10px;
-    background: #12181B;
+    background: #e8ecf3;
+    color: black;
+    text-align: center;
 }
 
 #sidebar ul li:first-child{
-    border-top: 1px #6F7071 solid;
+    border-top: 1px #bec9dc solid;
 }
 
 #sidebar ul li{
-    border-bottom: 1px #6F7071 solid;
-    box-shadow: 0 8px 2px -7px #41313A;
+    border-bottom: 1px #bec9dc solid;
 }
 
 #sidebar ul li a {
     padding: 13px;
     font-size: 1em;
     display: block;
-    color: #b8c7ce;
+    color: black;
     text-decoration: none;
 }
 #sidebar ul li a:hover {
     color: #fff;
-    background: #0F191D;
+    background: #ABB2BE;
 }
 
 #sidebar ul li.active > a    {
     color: #fff;
-    background: #79097F;
+    background: #67a8e4;
 }
 
 #sidebar ul li > a[aria-expanded="true"] {
     color: #fff;
-    background: #120513;
+    background: #ABB2BE;
 }
 
 a[data-toggle="collapse"] {
@@ -73,7 +74,7 @@ a[aria-expanded="true"]::before {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #4F5C63;
+    background: #e8ecf3;
 }
 
 i{

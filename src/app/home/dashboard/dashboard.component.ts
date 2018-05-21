@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PieChartConfig } from '../../shared/models/PieChartConfig';
-import { GooglePieChartService } from '../../shared/services/google-pie-chart.service';
+
+///
+import { TimelineChartConfig } from '../../shared/models/TimelineChartConfig';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,7 +16,7 @@ export class DashboardComponent implements OnInit {
   elementId1: String;
 
   data2: any[];
-  config2: PieChartConfig;
+  config2: TimelineChartConfig;
   elementId2: String;
 
   constructor() { }
@@ -32,16 +34,17 @@ export class DashboardComponent implements OnInit {
     this.config1 = new PieChartConfig('My Daily Activities at 20 years old', 0.4);
     this.elementId1 = 'myPieChart1';
 
-    //Piechart2 Data & Config
+    //Timeline Data & Config
     this.data2 = [['Task', 'Hours per Day'],
-    ['Work', 11],
-    ['Eat', 2],
+    ['Eat', 3],
     ['Commute', 2],
-    ['Watch TV', 2],
-    ['Sleep', 7]]
+    ['Watch TV', 5],
+    ['Video games', 4],
+    ['Sleep', 10]];
 
-    this.config2 = new PieChartConfig('My Daily Activities at 30 years old', 0.4);
+    this.config2 = new TimelineChartConfig(false,[]);
     this.elementId2 = 'myPieChart2';
+
   }
 
 }

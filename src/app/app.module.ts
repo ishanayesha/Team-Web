@@ -16,11 +16,16 @@ import { FooterComponent } from './home/components/footer/footer.component';
 import { SidebarComponent } from './home/components/sidebar/sidebar.component';
 import { TeamComponent } from './home/team/team.component';
 import { LeaveComponent } from './home/leave/leave.component';
+import { ProfileComponent } from './home/profile/profile.component';
+
+//charts
+import { PieChartComponent } from './home/components/charts/pie-chart/pie-chart.component';
+import { TimelineChartComponent } from './home/components/charts/timeline-chart/timeline-chart.component';
 
 //services
 import { GooglePieChartService } from './shared/services/google-pie-chart.service';
 import { GoogleChartsBaseService } from './shared/services/google-charts-base.service';
-import { PieChartComponent } from './home/dashboard/pie-chart/pie-chart.component';
+import { GoogleTimelineChartService } from './shared/services/google-timeline-chart.service';
 
 
 @NgModule({
@@ -36,7 +41,9 @@ import { PieChartComponent } from './home/dashboard/pie-chart/pie-chart.componen
     SidebarComponent,
     TeamComponent,
     LeaveComponent,
-    PieChartComponent
+    PieChartComponent,
+    ProfileComponent,
+    TimelineChartComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +51,8 @@ import { PieChartComponent } from './home/dashboard/pie-chart/pie-chart.componen
   ],
   providers: [
     GooglePieChartService,
-    GoogleChartsBaseService
+    GoogleChartsBaseService,
+    GoogleTimelineChartService
   ],
   bootstrap: [AppComponent]
 })
