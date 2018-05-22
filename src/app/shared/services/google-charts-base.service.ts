@@ -26,9 +26,8 @@ export class GoogleChartsBaseService {
       datatable.addColumn({ type: 'date', id: 'Start' });
       datatable.addColumn({ type: 'date', id: 'End' });
       datatable.addRows([
-        [ '1', 'George Washington', new Date(2018, 5, 13), new Date(2018, 5, 15) ],
-        [ '2', 'John Adams',        new Date(2018, 5, 15), new Date(2018, 5, 17) ],
-        [ '3', 'Thomas Jefferson',  new Date(2018, 5, 16), new Date(2018, 5, 20) ]]);
+        [ 'Dev', 'George Washington', new Date(2018, 5, 13), new Date(2018, 5, 15) ],
+        [ 'QA', 'Thomas Jefferson',  new Date(2018, 5, 16), new Date(2018, 5, 20) ]]);
   
       chartFunc().draw(datatable, options);
     };   

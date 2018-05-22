@@ -14,6 +14,8 @@ export class GoogleTimelineChartService extends GoogleChartsBaseService {
     var options = {
       avoidOverlappingGridLines: config.avoidOverlappingGridLines,
       timeline: config.timeline,
+      // backgroundColor: '#ffd',
+      colors: ['#8FFE8B', '#FBE555'],
       
     };
 

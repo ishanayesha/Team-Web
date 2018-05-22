@@ -20,12 +20,12 @@ export class MyAllocationComponent implements OnInit {
     //Timeline Data & Config
     this.data2 = [['Task', 'Hours per Day'],
     ['Eat', 3],
-    ['Commute', 2],
+    ['Eat', 2],
     ['Watch TV', 5],
     ['Video games', 4],
-    ['Sleep', 10]];
+    ['Eat', 10]];
 
-    this.config2 = new TimelineChartConfig(false, []);
+    this.config2 = new TimelineChartConfig(false, [{groupByRowLabel: true}]);
     this.elementId2 = 'myPieChart2';
 
   }
