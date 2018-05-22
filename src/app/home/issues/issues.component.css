@@ -6,3 +6,19 @@
     background: #f8f8f8;
     border: none;
 }
+
+.center-align{
+    text-align: center;
+}
+
+.dev-column-color{
+    background: #8FFE8B;
+}
+
+.qa-column-color{
+    background: #FBE555;
+}
+
+.tot-effort-column-color{
+    background: #96E3FE;
+}

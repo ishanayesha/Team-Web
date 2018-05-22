@@ -26,6 +26,7 @@ import { TimelineChartComponent } from './home/components/charts/timeline-chart/
 import { GooglePieChartService } from './shared/services/google-pie-chart.service';
 import { GoogleChartsBaseService } from './shared/services/google-charts-base.service';
 import { GoogleTimelineChartService } from './shared/services/google-timeline-chart.service';
+import { MyAllocationComponent } from './home/my-allocation/my-allocation.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { GoogleTimelineChartService } from './shared/services/google-timeline-ch
     LeaveComponent,
     PieChartComponent,
     ProfileComponent,
-    TimelineChartComponent
+    TimelineChartComponent,
+    MyAllocationComponent
   ],
   imports: [
     BrowserModule,

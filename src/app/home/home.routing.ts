@@ -4,6 +4,7 @@ import { TeamComponent } from './team/team.component'
 import { IssuesComponent } from './issues/issues.component'
 import { LeaveComponent } from './leave/leave.component'
 import { ProfileComponent } from './profile/profile.component'
+import { MyAllocationComponent } from './my-allocation/my-allocation.component'
 
 export const USER_ROUTES: Routes = [
     {
@@ -25,5 +26,9 @@ export const USER_ROUTES: Routes = [
     {
         path: 'profile',
         component: ProfileComponent
+    },
+    {
+        path: 'my-allocation',
+        component: MyAllocationComponent
     }
 ];
