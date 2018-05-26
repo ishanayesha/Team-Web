@@ -1,3 +1,13 @@
+/* dashboard tile style start */
+#leave-sheet{
+    min-height: 320px;
+}
+
+#summary-panel{
+    min-height: 550px;
+}
+/* dashboard tile style end */
+
 .dashboard-blue-card{
     background-color: #64b5f6;
     color: white;
@@ -28,6 +38,9 @@
     color: black;
     padding: .76923rem 1.53846rem;
     background: #d9dfeb;
+    border: 1px solid #BCBEC0;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;    
 }
 
 .card-title h4{

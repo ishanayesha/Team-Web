@@ -1,0 +1,48 @@
+<div>
+  <ul class="breadcrumb">
+    <li>Allocations</li>
+    <li>All Allocations
+      <span>
+        <i class="fa fa-angle-double-right"></i>
+      </span>
+    </li>
+  </ul>
+</div>
+
+<div id="main-min-height">
+  <div class="page-content">
+
+    <div class="page-title">
+      <h4>
+        Sprint Time Line
+        <span>
+          <button (click)="filtersVisibility()" class="">
+            <span class="glyphicon glyphicon-filter"></span> Filter</button>
+        </span>
+      </h4>
+    </div>
+
+    <div class="page-body">
+
+      <table id="filter-table" class="table" *ngIf="showFilters">
+        <tr class="filter-text-fileds">
+          <th>
+            <input type="text" class="form-control" placeholder="Jira ID">
+          </th>
+          <th>
+            <input type="text" class="form-control" placeholder="Type">
+          </th>
+          <th>
+            <input type="text" class="form-control" placeholder="Dev">
+          </th>
+          <th>
+            <input type="text" class="form-control" placeholder="QA">
+          </th>
+        </tr>
+      </table>
+
+      <app-timeline-chart [data]="data2" [config]="config2" [elementId]="elementId2"></app-timeline-chart>
+
+    </div>
+  </div>
+</div>

@@ -1,6 +1,11 @@
 <div>
   <ul class="breadcrumb">
-    <li>My Allocation</li>
+    <li>Allocations</li>
+    <li>My Allocations
+      <span>
+        <i class="fa fa-angle-double-right"></i>
+      </span>
+    </li>
   </ul>
 </div>
 
@@ -42,8 +47,8 @@
           <tr>
             <th>#</th>
             <th>Jira ID</th>
-            <!-- <th>Theme</th>
-            <th>Type</th> -->
+            <th>Theme</th>
+            <th>Type</th>
             <th>Jiara Summary</th>
             <th style="text-align: center">Status</th>
             <th>Dev</th>
@@ -59,8 +64,8 @@
           <tr>
             <td>1</td>
             <td>VH-7260</td>
-            <!-- <td>H2H Change Requests</td>
-            <td>Production Issue</td> -->
+            <td>H2H Change Requests</td>
+            <td>Production Issue</td>
             <td>Pegasus Booking the Incorrect Rate Code</td>
             <td style="background: #FA4005;text-align: center">Open</td>
             <td>Ishan</td>
@@ -75,8 +80,8 @@
           <tr>
             <td>2</td>
             <td>VH-7260</td>
-            <!-- <td>H2H Change Requests</td>
-            <td>Production Issue</td> -->
+            <td>H2H Change Requests</td>
+            <td>Production Issue</td>
             <td>Pegasus Booking the Incorrect Rate Code</td>
             <td style="background: #FA4005;text-align: center">Open</td>
             <td>Ishan</td>
@@ -91,8 +96,8 @@
           <tr>
             <td>3</td>
             <td>VH-7260</td>
-            <!-- <td>H2H Change Requests</td>
-            <td>Production Issue</td> -->
+            <td>H2H Change Requests</td>
+            <td>Production Issue</td>
             <td>Pegasus Booking the Incorrect Rate Code</td>
             <td style="background: #FA4005;text-align: center">Open</td>
             <td>Ishan</td>
@@ -107,6 +112,15 @@
         </tbody>
       </table>
 
+      <div class="row">
+        <div class="col-md-12 sub-topic">
+          <!-- <div class="line"></div> -->
+          <h4>
+            <i class="fa fa-clock-o" aria-hidden="true"></i> Time Line
+          </h4>
+          <!-- <div class="line"></div> -->
+        </div>
+      </div>
 
       <app-timeline-chart [data]="data2" [config]="config2" [elementId]="elementId2"></app-timeline-chart>
 

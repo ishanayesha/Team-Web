@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TimelineChartConfig } from '../../shared/models/TimelineChartConfig';
+import { TimelineChartConfig } from '../../../shared/models/TimelineChartConfig';
 
 @Component({
   selector: 'app-my-allocation',

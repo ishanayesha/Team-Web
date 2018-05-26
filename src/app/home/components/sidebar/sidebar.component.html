@@ -6,43 +6,48 @@
 
   <ul class="list-unstyled components">
     <li class="active">
-      <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
-        <i class="fa fa-dashboard"></i>
+      <a routerLink="">
+        <i class="fa fa-home-o"></i>
         <span>Home</span>
+    </a>
+    </li>
+    <li>
+      <a href="#issuesMenu" data-toggle="collapse" aria-expanded="false">
+        <i class="fa fa-tasks"></i>
+        <span>Issues</span>
       </a>
-      <ul class="collapse list-unstyled" id="homeSubmenu">
-        <li><a href="#">Home 1</a></li>
-        <li><a href="#">Home 2</a></li>
-        <li><a href="#">Home 3</a></li>
+      <ul class="collapse list-unstyled" id="issuesMenu">
+        <li><a routerLink="/my-issues">My Issues</a></li>
+        <li><a routerLink="/all-issues">All Issues</a></li>
+        <li><a routerLink="/ongoing-issues">Ongoing Issues</a></li>
       </ul>
     </li>
     <li>
-      <a href="#">
-          <i class="fa fa-dashboard"></i>
-          <span>About</span>
+      <a href="#allocationsMenu" data-toggle="collapse" aria-expanded="false">
+          <i class="fa fa-calendar"></i>
+          <span>Allocations</span>
       </a>
-    </li>
-    <li>
-      <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
-          <i class="fa fa-dashboard"></i>
-          <span>Pages</span>
-      </a>
-      <ul class="collapse list-unstyled" id="pageSubmenu">
-        <li><a href="#">Page 1</a></li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
+      <ul class="collapse list-unstyled" id="allocationsMenu">
+        <li><a routerLink="/my-allocations">My Allocations</a></li>
+        <li><a routerLink="/all-allocations">All Allocations</a></li>
       </ul>
     </li>
     <li>
-      <a href="#">
-          <i class="fa fa-dashboard"></i>
-          <span>Portfolio</span>
+      <a routerLink="/leave">
+          <i class="fa fa-image"></i>
+          <span>Leave</span>
       </a>
     </li>
     <li>
-      <a href="#">
-          <i class="fa fa-dashboard"></i>
-          <span>Contact</span>
+      <a routerLink="/profile">
+          <i class="fa fa-user-circle-o"></i>
+          <span>Profile</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/team">
+          <i class="fa fa-group"></i>
+          <span>Team</span>
       </a>
     </li>
   </ul>

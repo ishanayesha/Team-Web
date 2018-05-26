@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+//modules
+import {CountDown} from "ng4-date-countdown-timer";
+
 //routes
 import { Routing } from './app.routing';
 
@@ -10,7 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
-import { IssuesComponent } from './home/issues/issues.component';
+import { AllIssuesComponent } from './home/issues/all-issues/all-issues.component';
 import { NavbarComponent } from './home/components/navbar/navbar.component';
 import { FooterComponent } from './home/components/footer/footer.component';
 import { SidebarComponent } from './home/components/sidebar/sidebar.component';
@@ -26,17 +29,23 @@ import { TimelineChartComponent } from './home/components/charts/timeline-chart/
 import { GooglePieChartService } from './shared/services/google-pie-chart.service';
 import { GoogleChartsBaseService } from './shared/services/google-charts-base.service';
 import { GoogleTimelineChartService } from './shared/services/google-timeline-chart.service';
-import { MyAllocationComponent } from './home/my-allocation/my-allocation.component';
+import { MyAllocationComponent } from './home/allocations/my-allocation/my-allocation.component';
+import { AllAllocationsComponent } from './home/allocations/all-allocations/all-allocations.component';
+import { MyIssuesComponent } from './home/issues/my-issues/my-issues.component';
+import { OngoingIssuesComponent } from './home/issues/ongoing-issues/ongoing-issues.component';
+// import { AllocationsComponent } from './home/allocations/allocations.component';
+// import { MyIssuesComponent } from './home/my-issues/my-issues.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    CountDown,
     LoginComponent,
     HomeComponent,
     PageNotFoundComponent,
     DashboardComponent,
-    IssuesComponent,
+    AllIssuesComponent,
     NavbarComponent,
     FooterComponent,
     SidebarComponent,
@@ -45,7 +54,12 @@ import { MyAllocationComponent } from './home/my-allocation/my-allocation.compon
     PieChartComponent,
     ProfileComponent,
     TimelineChartComponent,
-    MyAllocationComponent
+    MyAllocationComponent,
+    AllAllocationsComponent,
+    MyIssuesComponent,
+    OngoingIssuesComponent,
+    // AllocationsComponent,
+    // MyIssuesComponent
   ],
   imports: [
     BrowserModule,

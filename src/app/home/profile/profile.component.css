@@ -2,13 +2,3 @@
     margin: auto;
     text-align: center;
 }
-
-.sub-topic{
-    /* background: #e9f0f5; */
-    /* background: linear-gradient(to right, #d0e3e2, #dceaed, #e9f0f5, #f5f7fa, #ffffff);  */
-    /* padding: .5em; */
-}
-
-.sub-topic i{
-    margin-right: .5em;
-}

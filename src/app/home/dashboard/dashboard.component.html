@@ -1,7 +1,7 @@
 <div id="main-min-height">
 
   <div class="col-md-3 dashboard-blue-card">
-    asas
+    Current Sprint: 48
   </div>
   <div class="col-md-3 dashboard-blue-card">
     asas
@@ -16,9 +16,9 @@
 
   <div class="row">
 
-    <!-- pie chart -->
+    <!-- pie chart start-->
     <div class="col-md-8">
-      <div class="card">
+      <div class="card" id="summary-panel">
 
         <div class="card-title">
           <h4>Sprint Summary</h4>
@@ -28,24 +28,29 @@
           <app-pie-chart [data]="data1" [config]="config1" [elementId]="elementId1"></app-pie-chart>
         </div>
 
-        <app-timeline-chart [data]="data2" [config]="config2" [elementId]="elementId2"></app-timeline-chart>
+      </div>
+    </div>
+    <!-- pie chart end-->
+
+
+    <!-- code freeze start-->
+    <div class="col-md-4">
+      <div class="card">
+
+        <div class="card-title">
+          <h4>Code Freeze Start</h4>
+        </div>
+
+        <div class="card-content">
+          <countdown units="Days | Hours | Minutes | Seconds" end="July 22, 2018"></countdown>
+        </div>
 
       </div>
     </div>
+    <!-- code freeze end -->
 
-    <!-- pie chart -->
-    <!-- <div class="col-md-8">
-      <div class="panel panel-theme card panel-danger">
-        <div class="panel-heading">Spring Summary</div>
-        <div class="panel-body">
 
-          <app-pie-chart [data]="data1" [config]="config1" [elementId]="elementId1"></app-pie-chart>
-
-        </div>
-      </div>
-    </div> -->
-
-    <!-- details panel -->
+    <!-- details panel start-->
     <div class="col-md-4">
       <div class="card">
 
@@ -90,16 +95,18 @@
       </div>
 
     </div>
+    <!-- details panel end-->
 
 
+    <!-- leave sheet start -->
     <div class="col-md-6">
-      <div class="card">
+      <div class="card" id="leave-sheet">
 
         <div class="card-title">
           <h4>
             Today Leave Sheet
             <span>
-              <button class=""><span class="glyphicon glyphicon-plus"></span> Add</button>
+                <button class=""><span class="glyphicon glyphicon-plus"></span> Add</button>
             </span>
           </h4>
 
@@ -140,6 +147,72 @@
         </div>
       </div>
     </div>
+    <!-- leave sheet end -->
+
+
+    <!-- details panel start-->
+    <div class="col-md-6">
+      <div class="card">
+
+        <div class="card-title">
+          <h4>Environments Details</h4>
+        </div>
+
+        <div class="card-content">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>Current Sprint</td>
+                <td>46</td>
+              </tr>
+              <tr>
+                <td>Days Remaining</td>
+                <td>6</td>
+              </tr>
+              <tr>
+                <td>Start Date</td>
+                <td>2018-04-18</td>
+              </tr>
+              <tr>
+                <td>End Date</td>
+                <td>2018-04-18</td>
+              </tr>
+              <tr>
+                <td>Code Fereze</td>
+                <td>2018-04-18</td>
+              </tr>
+              <tr>
+                <td>Regression</td>
+                <td>2018-04-18</td>
+              </tr>
+              <tr>
+                <td>Hand Over</td>
+                <td>2018-04-18</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+    <!-- details panel end-->
+
+
+    <!-- pie chart -->
+    <!-- <div class="col-md-8">
+      <div class="panel panel-theme card panel-danger">
+        <div class="panel-heading">Spring Summary</div>
+        <div class="panel-body">
+
+          <app-pie-chart [data]="data1" [config]="config1" [elementId]="elementId1"></app-pie-chart>
+
+        </div>
+      </div>
+    </div> -->
+
+
+
+
 
     <div class="col-md-6"></div>
   </div>

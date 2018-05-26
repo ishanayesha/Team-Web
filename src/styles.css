@@ -1,4 +1,4 @@
-/* page heading location */
+/* page heading location start*/
 ul.breadcrumb {
     padding: 10px 16px;
     list-style: none;
@@ -24,12 +24,50 @@ ul.breadcrumb li a:hover {
 .breadcrumb span{
     margin-left: 1em;
 }
+/* page heading location end*/
+
+/* navbar styles start*/
+.navbar {
+    /* padding: 15px 10px; */
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-style{
+    background-color: #e8ecf3;
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+    background: #999;
+}
+/* navbar styles end*/
 
 
-/* page heading location*/
+/* page body start*/
+#main-min-height{
+    min-height: 100vh;
+}
 
-/* page content */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
 
+.wrapper {
+    display: flex;
+    align-items: stretch;
+    perspective: 1500px;
+}
+/* page body end*/
+
+
+/* common stayles start*/
 input[type='text'],input[type='email']{
     border: 2px solid #cad2e2 !important;
     border-radius: 0 !important;
@@ -97,23 +135,6 @@ input{
     border-radius: 0;
 }
 
-/* page content */
-
-#main-min-height{
-    min-height: 100vh;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background: #fafafa;
-}
-
-.wrapper {
-    display: flex;
-    align-items: stretch;
-    perspective: 1500px;
-}
-
 p {
     font-family: 'Poppins', sans-serif;
     font-size: 1.1em;
@@ -128,32 +149,55 @@ a, a:hover, a:focus {
     transition: all 0.3s;
 }
 
-.navbar {
-    /* padding: 15px 10px; */
-    background: #fff;
-    border: none;
-    border-radius: 0;
-    margin-bottom: 40px;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-}
-
-.navbar-style{
-    background-color: #e8ecf3;
-}
-
-.navbar-btn {
-    box-shadow: none;
-    outline: none !important;
-    border: none;
-    background: #999;
-}
 
 .line {
     width: 100%;
     height: 1px;
     border-bottom: 1px dashed #ddd;
-    margin: 20px 0;
+    /* margin: 20px 0; */
 }
+
+.sub-topic{
+    background: #e9f0f5;
+    /* background: linear-gradient(to right, #d0e3e2, #dceaed, #e9f0f5, #f5f7fa, #ffffff);  */
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.sub-topic i{
+    margin-right: .5em;
+}
+/* common stayles end*/
+
+
+
+/* issues allocations table styles start*/
+#filter-table th{
+    border-top: none !important;
+}
+
+.filter-text-fileds{
+    background: #f8f8f8;
+    border: none;
+}
+
+.center-align{
+    text-align: center;
+}
+
+.dev-column-color{
+    background: #8FFE8B;
+}
+
+.qa-column-color{
+    background: #FBE555;
+}
+
+.tot-effort-column-color{
+    background: #96E3FE;
+}
+/* issues allocations table styles end*/
+
 
 /* ---------------------------------------------------
     CONTENT STYLE

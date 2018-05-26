@@ -41,7 +41,7 @@
 }
 #sidebar ul li a:hover {
     color: #fff;
-    background: #ABB2BE;
+    background: #828282;
 }
 
 #sidebar ul li.active > a    {
@@ -51,7 +51,7 @@
 
 #sidebar ul li > a[aria-expanded="true"] {
     color: #fff;
-    background: #ABB2BE;
+    background: #666666;
 }
 
 a[data-toggle="collapse"] {

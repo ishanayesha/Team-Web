@@ -1,0 +1,28 @@
+::ng-deep .countdown {
+    // width: 100%;
+    height: 100px;
+    // background: black;
+
+    .two-dots {
+      display: none;
+    }
+
+    .measurements {
+      color: white;
+      margin-right: 5px;
+      padding: 10px;
+    //   width: 100%;
+   }
+
+   .divider {
+    font-size: 1.1em;
+   }
+
+  //  .measurements-text{
+  //      color: black;
+  //  }
+
+  //  .measurements p{
+  //   display: inline;
+  //  }
+}
