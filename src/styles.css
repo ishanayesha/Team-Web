@@ -4,27 +4,28 @@ ul.breadcrumb {
     list-style: none;
     /* background-image: linear-gradient(to right, #d0e3e2, #dceaed, #e9f0f5, #f5f7fa, #ffffff); */
 }
+
 ul.breadcrumb li {
     display: inline;
     font-size: 18px;
 }
+
 ul.breadcrumb li+li:before {
     padding: 8px;
     color: black;
     content: "/\00a0";
 }
-ul.breadcrumb li a {
-    color: #0275d8;
+
+ul.breadcrumb li {
+    color: #3F607C;
     text-decoration: none;
-}
-ul.breadcrumb li a:hover {
-    color: #01447e;
 }
 
 .breadcrumb span{
     margin-left: 1em;
 }
 /* page heading location end*/
+
 
 /* navbar styles start*/
 .navbar {
@@ -67,8 +68,28 @@ body {
 /* page body end*/
 
 
-/* common stayles start*/
-input[type='text'],input[type='email']{
+/* common styles start*/
+
+.center-text{
+    text-align: center;
+}
+
+/* calender icon */
+input[type="date"]::-webkit-inner-spin-button {
+    opacity: 0
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: url(https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/calendar-16.png) center/80% no-repeat;
+    color: rgba(0, 0, 0, 0);
+    opacity: 0.5
+}
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    background: url(https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/calendar-16.png) center/80% no-repeat;
+    opacity: 0.8
+}
+/* calender icon */
+
+input[type='text'],input[type='email'],input[type='date'],select{
     border: 2px solid #cad2e2 !important;
     border-radius: 0 !important;
 }
@@ -167,7 +188,7 @@ a, a:hover, a:focus {
 .sub-topic i{
     margin-right: .5em;
 }
-/* common stayles end*/
+/* common styles end*/
 
 
 

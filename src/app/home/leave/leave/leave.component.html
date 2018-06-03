@@ -1,0 +1,58 @@
+<div>
+  <ul class="breadcrumb">
+    <li>Leave</li>
+    <li>Apply Leave
+      <span>
+          <i class="fa fa-angle-double-right"></i>
+        </span>
+    </li>
+  </ul>
+</div>
+
+<div id="main-min-height">
+  <div class="page-content">
+
+    <div class="page-title">
+      <h4>Apply a leave</h4>
+    </div>
+
+    <div class="page-body">
+
+      <form>
+
+        <div class="form-group row">
+          <label for="inputPassword" class="col-sm-2 col-form-label">Leave Type</label>
+          <div class="col-sm-6">
+            <select class="form-control">
+              <option value="1">Full Day</option>
+              <option value="2">Half Day</option>              
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Date</label>
+          <div class="col-sm-6">
+            <input min="{{date | date:'yyyy-MM-dd'}}" max="{{dateMax | date:'yyyy-MM-dd'}}" [ngModel]="startDate | date:'yyyy-MM-dd'"
+              (ngModelChange)="startDate = $event" name="startDate" type="date" class="form-control">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Days</label>
+          <div class="col-sm-6">
+            <input min="1" type="number" class="form-control">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-6">
+            <button type="submit" class="btn">Submit</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

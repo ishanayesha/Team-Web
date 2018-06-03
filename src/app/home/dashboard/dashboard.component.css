@@ -4,13 +4,14 @@
 }
 
 #summary-panel{
-    min-height: 550px;
+    min-height: 560px;
 }
 /* dashboard tile style end */
 
 .dashboard-blue-card{
     background-color: #64b5f6;
-    color: white;
+    color: #515050;
+    font-weight: bold;
     border: 5px solid #f8f8f8;
     margin: 0 0 1.53846rem;
     padding: 2em;
@@ -74,12 +75,15 @@
 
 .leave-bubble {
 	position: relative;
-	background: #00aabb;
+	background: #B6D1E8;
     border-radius: .4em;
     position: absolute;
     min-width: 300px;
     min-height: 250px;
     top: 60px;
+    -webkit-box-shadow: -1px 3px 5px 0px rgba(133,133,133,1);
+    -moz-box-shadow: -1px 3px 5px 0px rgba(133,133,133,1);
+    box-shadow: -1px 3px 5px 0px rgba(133,133,133,1);
 }
 
 .leave-bubble:after {
@@ -90,7 +94,7 @@
 	width: 0;
 	height: 0;
 	border: 49px solid transparent;
-	border-bottom-color: #00aabb;
+	border-bottom-color: #B6D1E8;
 	border-top: 0;
 	border-right: 0;
 	margin-left: -14px;

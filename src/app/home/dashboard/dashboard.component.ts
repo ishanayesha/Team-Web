@@ -4,15 +4,17 @@ import { PieChartConfig } from '../../shared/models/PieChartConfig';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css','./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.css', './dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+
+  newLeaveDiv: boolean = false;
 
   data1: any[];
   config1: PieChartConfig;
   elementId1: String;
 
-  text:any = {
+  text: any = {
     Year: 'Year',
     Month: 'Month',
     Weeks: "Weeks",
@@ -37,6 +39,10 @@ export class DashboardComponent implements OnInit {
 
     this.config1 = new PieChartConfig('My Daily Activities at 20 years old', 0.4);
     this.elementId1 = 'myPieChart1';
+  }
+
+  addLeave() {
+    this.newLeaveDiv = !this.newLeaveDiv;
   }
 
 }

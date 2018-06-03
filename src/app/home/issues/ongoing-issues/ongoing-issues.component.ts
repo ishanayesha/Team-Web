@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OngoingIssuesComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  showFilters: boolean = false;
+  
+    constructor() { }
+  
+    ngOnInit() {
+    }
+  
+    filtersVisibility() {
+      this.showFilters = !this.showFilters;
+    }
 
 }

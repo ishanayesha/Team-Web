@@ -6,10 +6,16 @@
 
   <ul class="list-unstyled components">
     <li class="active">
-      <a routerLink="">
+      <a routerLink="/">
         <i class="fa fa-home-o"></i>
         <span>Home</span>
     </a>
+    </li>
+    <li>
+      <a routerLink="/admin">
+            <i class="fa fa-user-secret"></i>
+            <span>Admin</span>
+        </a>
     </li>
     <li>
       <a href="#issuesMenu" data-toggle="collapse" aria-expanded="false">
@@ -33,10 +39,14 @@
       </ul>
     </li>
     <li>
-      <a routerLink="/leave">
+      <a href="#leave" data-toggle="collapse" aria-expanded="false">
           <i class="fa fa-image"></i>
           <span>Leave</span>
-      </a>
+        </a>
+      <ul class="collapse list-unstyled" id="leave">
+        <li><a routerLink="/leave">Apply Leave</a></li>
+        <li><a routerLink="/leave-sheet">Leave Sheet</a></li>
+      </ul>
     </li>
     <li>
       <a routerLink="/profile">

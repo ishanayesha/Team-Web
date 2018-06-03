@@ -11,8 +11,42 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a class="navbar-links" href="#">Page</a></li>
-        <li><a class="navbar-links" href="#">Page</a></li>
+        <!-- <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                  <li><a href="#">Dropdown 1</a></li>
+                  <li><a href="#">Dropdown 2</a></li>
+                  <li><a href="#">Dropdown 3</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown 4</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Dropdown Submenu 4.1</a></li>
+                      <li><a href="#">Dropdown Submenu 4.2</a></li>
+                      <li><a href="#">Dropdown Submenu 4.3</a></li>
+                      <li><a href="#">Dropdown Submenu 4.4</a></li>
+                    </ul>
+                  </li>
+              </ul>
+          </li> -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle navbar-links" data-toggle="dropdown">Issues <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a routerLink="/my-issues">My Issues</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="/all-issues">All Issues</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="/ongoing-issues">Ongoing Issues</a></li>            
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle navbar-links" data-toggle="dropdown">Allocations <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a routerLink="/my-allocations">My Allocations</a></li>
+            <li class="divider"></li>
+            <li><a routerLink="/all-allocations">All Allocations</a></li>
+          </ul>
+        </li>
+        <li><a class="navbar-links" routerLink="">Admin</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                       <span class="navbar-links glyphicon glyphicon-user"></span> 
@@ -30,7 +64,7 @@
                   </div>
                   <div class="col-lg-8">
                     <p class="text-left"><strong>Ishan Ayesha</strong></p>
-                    <p class="text-left small">Assciate Software Engineer</p>
+                    <p class="text-left small">Associate Software Engineer</p>
                     <p class="text-left">
                       <a routerLink="/profile" class="btn btn-primary btn-block btn-sm">My Profile</a>
                     </p>

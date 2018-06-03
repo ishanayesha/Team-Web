@@ -62,10 +62,16 @@
 }
 
 .input-group span{
-    background: #1B94FF;
+    background: #B5D0EA;
+    border-radius: 50%;
+}
+
+.input-group p{
+    margin-left: 10px;
 }
 
 .center-align{
+    margin-top: 10px;
     display:table;
     margin-left:auto;
     margin-right:auto;

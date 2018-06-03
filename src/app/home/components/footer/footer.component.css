@@ -19,3 +19,8 @@ a{
 .set-align{
     margin-top: 2em;
 }
+
+.company-name{
+    color: #212168;
+    font-weight: bold;
+}

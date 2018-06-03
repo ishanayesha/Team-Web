@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeaveComponent implements OnInit {
 
-  constructor() { }
+  startDate: any;
+  date:any;
+  dateMax:any;
+
+  constructor() {
+    this.startDate = Date.now();
+    this.date=Date.now();
+    this.dateMax="2018-06-18";
+    
+   }
 
   ngOnInit() {
   }
+
+  model;
 
 }

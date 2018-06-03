@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //modules
 import {CountDown} from "ng4-date-countdown-timer";
@@ -18,7 +19,7 @@ import { NavbarComponent } from './home/components/navbar/navbar.component';
 import { FooterComponent } from './home/components/footer/footer.component';
 import { SidebarComponent } from './home/components/sidebar/sidebar.component';
 import { TeamComponent } from './home/team/team.component';
-import { LeaveComponent } from './home/leave/leave.component';
+import { LeaveComponent } from './home/leave/leave/leave.component';
 import { ProfileComponent } from './home/profile/profile.component';
 
 //charts
@@ -33,6 +34,7 @@ import { MyAllocationComponent } from './home/allocations/my-allocation/my-alloc
 import { AllAllocationsComponent } from './home/allocations/all-allocations/all-allocations.component';
 import { MyIssuesComponent } from './home/issues/my-issues/my-issues.component';
 import { OngoingIssuesComponent } from './home/issues/ongoing-issues/ongoing-issues.component';
+import { LeaveSheetComponent } from './home/leave/leave-sheet/leave-sheet.component';
 // import { AllocationsComponent } from './home/allocations/allocations.component';
 // import { MyIssuesComponent } from './home/my-issues/my-issues.component';
 
@@ -58,12 +60,14 @@ import { OngoingIssuesComponent } from './home/issues/ongoing-issues/ongoing-iss
     AllAllocationsComponent,
     MyIssuesComponent,
     OngoingIssuesComponent,
+    LeaveSheetComponent,
     // AllocationsComponent,
     // MyIssuesComponent
   ],
   imports: [
     BrowserModule,
-    Routing
+    Routing,
+    FormsModule
   ],
   providers: [
     GooglePieChartService,

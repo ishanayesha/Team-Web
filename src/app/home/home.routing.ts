@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component'
 import { TeamComponent } from './team/team.component'
-import { LeaveComponent } from './leave/leave.component'
 import { ProfileComponent } from './profile/profile.component'
 
 import { AllIssuesComponent } from './issues/all-issues/all-issues.component'
@@ -10,6 +9,9 @@ import { OngoingIssuesComponent } from './issues/ongoing-issues/ongoing-issues.c
 
 import { AllAllocationsComponent } from './allocations/all-allocations/all-allocations.component'
 import { MyAllocationComponent } from './allocations/my-allocation/my-allocation.component'
+
+import { LeaveComponent } from './leave/leave/leave.component'
+import { LeaveSheetComponent } from './leave/leave-sheet/leave-sheet.component'
 
 export const USER_ROUTES: Routes = [
     {
@@ -23,6 +25,10 @@ export const USER_ROUTES: Routes = [
     {
         path: 'leave',
         component: LeaveComponent
+    },
+    {
+        path: 'leave-sheet',
+        component: LeaveSheetComponent
     },
     {
         path: 'profile',

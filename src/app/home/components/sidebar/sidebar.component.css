@@ -77,6 +77,6 @@ ul ul a {
     background: #e8ecf3;
 }
 
-i{
-    padding-right: 1em;
+li span{
+    margin-left: 15px;
 }

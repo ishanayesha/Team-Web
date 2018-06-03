@@ -4,7 +4,7 @@
     Current Sprint: 48
   </div>
   <div class="col-md-3 dashboard-blue-card">
-    asas
+    Code Freeze: 2018-08-08 
   </div>
   <div class="col-md-3 dashboard-blue-card">
     asas
@@ -106,12 +106,45 @@
           <h4>
             Today Leave Sheet
             <span>
-                <button class=""><span class="glyphicon glyphicon-plus"></span> Add</button>
+                <button (click)="addLeave()" class=""><span class="glyphicon glyphicon-plus"></span> Add</button>
             </span>
           </h4>
 
-          <div class="add-leave">
-            <div class="leave-bubble">sadasdas</div>
+          <div *ngIf="newLeaveDiv" class="add-leave">
+            <div class="leave-bubble">
+
+              <div style="padding: 5%;margin-top: 15px;">
+                <form>
+
+                  <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-3 col-form-label">Type</label>
+                    <div class="col-sm-8">
+                      <select class="form-control">
+                        <option value="1">Full Day</option>
+                        <option value="2">Half Day</option>              
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Date</label>
+                    <div class="col-sm-8">
+                      <input min="{{date | date:'yyyy-MM-dd'}}" max="{{dateMax | date:'yyyy-MM-dd'}}" [ngModel]="startDate | date:'yyyy-MM-dd'"
+                        (ngModelChange)="startDate = $event" name="startDate" type="date" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-8">
+                      <button type="submit" class="btn">Submit</button>
+                    </div>
+                  </div>
+
+                </form>
+              </div>
+
+            </div>
           </div>
 
         </div>
@@ -127,17 +160,17 @@
             </thead>
             <tbody>
               <tr>
-                <th scope="row">1</th>
+                <td scope="row">1</td>
                 <td>Mark</td>
                 <td>Otto</td>
               </tr>
               <tr>
-                <th scope="row">2</th>
+                <td scope="row">2</td>
                 <td>Jacob</td>
                 <td>Thornton</td>
               </tr>
               <tr>
-                <th scope="row">3</th>
+                <td scope="row">3</td>
                 <td>Larry</td>
                 <td>the Bird</td>
               </tr>
@@ -197,60 +230,8 @@
     </div>
     <!-- details panel end-->
 
-
-    <!-- pie chart -->
-    <!-- <div class="col-md-8">
-      <div class="panel panel-theme card panel-danger">
-        <div class="panel-heading">Spring Summary</div>
-        <div class="panel-body">
-
-          <app-pie-chart [data]="data1" [config]="config1" [elementId]="elementId1"></app-pie-chart>
-
-        </div>
-      </div>
-    </div> -->
-
-
-
-
-
     <div class="col-md-6"></div>
+
+
+    
   </div>
-
-
-  <h2>
-    Collapsible Sidebar Using Bootstrap 3</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-  <div class="line"></div>
-
-  <h2>Lorem Ipsum Dolor</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-  <div class="line"></div>
-
-  <h2>Lorem Ipsum Dolor</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-  <div class="line"></div>
-
-  <h3>Lorem Ipsum Dolor</h3>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-</div>
