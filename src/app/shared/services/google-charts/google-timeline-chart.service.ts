@@ -1,5 +1,5 @@
 import { GoogleChartsBaseService } from './google-charts-base.service';
-import { TimelineChartConfig } from '../models/TimelineChartConfig';
+import { TimelineChartConfig } from '../../models/TimelineChartConfig';
 import { Injectable } from '@angular/core';
 
 declare var google: any;

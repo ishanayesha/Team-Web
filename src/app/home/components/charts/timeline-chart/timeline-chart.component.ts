@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TimelineChartConfig } from '../../../../shared/models/TimelineChartConfig';
-import { GoogleTimelineChartService } from '../../../../shared/services/google-timeline-chart.service';
+import { GoogleTimelineChartService } from '../../../../shared/services/google-charts/google-timeline-chart.service';
 
 @Component({
   selector: 'app-timeline-chart',

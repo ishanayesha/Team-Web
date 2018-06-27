@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PieChartConfig } from '../../../../shared/models/PieChartConfig';
-import { GooglePieChartService } from '../../../../shared/services/google-pie-chart.service';
+import { GooglePieChartService } from '../../../../shared/services/google-charts/google-pie-chart.service';
 
 @Component({
   selector: 'app-pie-chart',

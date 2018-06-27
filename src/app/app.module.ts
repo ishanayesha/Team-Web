@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 //modules
 import {CountDown} from "ng4-date-countdown-timer";
@@ -21,22 +22,30 @@ import { SidebarComponent } from './home/components/sidebar/sidebar.component';
 import { TeamComponent } from './home/team/team.component';
 import { LeaveComponent } from './home/leave/leave/leave.component';
 import { ProfileComponent } from './home/profile/profile.component';
+import { MyAllocationComponent } from './home/allocations/my-allocation/my-allocation.component';
+import { AllAllocationsComponent } from './home/allocations/all-allocations/all-allocations.component';
+import { MyIssuesComponent } from './home/issues/my-issues/my-issues.component';
+import { OngoingIssuesComponent } from './home/issues/ongoing-issues/ongoing-issues.component';
+import { LeaveSheetComponent } from './home/leave/leave-sheet/leave-sheet.component';
 
 //charts
 import { PieChartComponent } from './home/components/charts/pie-chart/pie-chart.component';
 import { TimelineChartComponent } from './home/components/charts/timeline-chart/timeline-chart.component';
 
 //services
-import { GooglePieChartService } from './shared/services/google-pie-chart.service';
-import { GoogleChartsBaseService } from './shared/services/google-charts-base.service';
-import { GoogleTimelineChartService } from './shared/services/google-timeline-chart.service';
-import { MyAllocationComponent } from './home/allocations/my-allocation/my-allocation.component';
-import { AllAllocationsComponent } from './home/allocations/all-allocations/all-allocations.component';
-import { MyIssuesComponent } from './home/issues/my-issues/my-issues.component';
-import { OngoingIssuesComponent } from './home/issues/ongoing-issues/ongoing-issues.component';
-import { LeaveSheetComponent } from './home/leave/leave-sheet/leave-sheet.component';
-// import { AllocationsComponent } from './home/allocations/allocations.component';
-// import { MyIssuesComponent } from './home/my-issues/my-issues.component';
+  //charts
+import { GooglePieChartService } from './shared/services/google-charts/google-pie-chart.service';
+import { GoogleChartsBaseService } from './shared/services/google-charts/google-charts-base.service';
+import { GoogleTimelineChartService } from './shared/services/google-charts/google-timeline-chart.service';
+
+  //other services
+  import { UserService } from './shared/services/user.service';
+
+  //auth
+  import { AuthService } from './shared/services/auth.service';  
+
+//guards
+import { AuthGuard } from './shared/guards/auth.guard';
 
 
 @NgModule({
@@ -60,19 +69,21 @@ import { LeaveSheetComponent } from './home/leave/leave-sheet/leave-sheet.compon
     AllAllocationsComponent,
     MyIssuesComponent,
     OngoingIssuesComponent,
-    LeaveSheetComponent,
-    // AllocationsComponent,
-    // MyIssuesComponent
+    LeaveSheetComponent
   ],
   imports: [
     BrowserModule,
     Routing,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     GooglePieChartService,
     GoogleChartsBaseService,
-    GoogleTimelineChartService
+    GoogleTimelineChartService,
+    AuthGuard,
+    AuthService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
