@@ -8,45 +8,47 @@
     <div class="page-body">
 
       <div class="row">
+        <div *ngIf="(team?.length)>0;else noResult">
 
-        <!-- Team member -->
-        <div *ngFor="let member of team">
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-              <div class="mainflip">
-                <div class="frontside">
-                  <div class="card">
-                    <div class="card-body text-center">
-                      <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png"
-                          alt="card image"></p>
-                      <h4 class="card-title">{{member.firstName}} {{member.lastName}}</h4>
-                      <p class="card-text">{{member.designation}}</p>
-                      <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+          <!-- Team member -->
+          <div *ngFor="let member of team">
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                <div class="mainflip">
+                  <div class="frontside">
+                    <div class="card">
+                      <div class="card-body text-center">
+                        <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png"
+                            alt="card image"></p>
+                        <h4 class="card-title">{{member.firstName}} {{member.lastName}}</h4>
+                        <p class="card-text">{{member.designation}}</p>
+                        <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="backside">
-                  <div class="card">
-                    <div class="card-body mt-4 text-center">
-                      <h4 class="card-title">{{member.firstName}} {{member.lastName}}</h4>
-                      <p class="card-text">Associate Software Engineer</p>
-                      <div class="center-align">
-                        <div class="form-group">
-                          <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                            <p>{{member.email}}</p>
+                  <div class="backside">
+                    <div class="card">
+                      <div class="card-body mt-4 text-center">
+                        <h4 class="card-title">{{member.firstName}} {{member.lastName}}</h4>
+                        <p class="card-text">Associate Software Engineer</p>
+                        <div class="center-align">
+                          <div class="form-group">
+                            <div class="input-group">
+                              <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                              <p>{{member.email}}</p>
+                            </div>
                           </div>
-                        </div>
-                        <div class="form-group">
-                          <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-skype"></i></span>
-                            <p>{{member.skypeId}}</p>
+                          <div class="form-group">
+                            <div class="input-group">
+                              <span class="input-group-addon"><i class="fa fa-skype"></i></span>
+                              <p>{{member.skypeId}}</p>
+                            </div>
                           </div>
-                        </div>
-                        <div class="form-group">
-                          <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                            <p>{{member.mobile}}</p>
+                          <div class="form-group">
+                            <div class="input-group">
+                              <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                              <p>{{member.mobile}}</p>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -56,8 +58,10 @@
               </div>
             </div>
           </div>
+          <!-- ./Team member -->
+
         </div>
-        <!-- ./Team member -->
+        <ng-template #noResult>No result found</ng-template>
 
       </div>
       <!-- Team -->

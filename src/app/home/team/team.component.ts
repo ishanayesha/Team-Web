@@ -11,6 +11,7 @@ import { User } from '../../shared/models/User';
 export class TeamComponent implements OnInit {
 
   team: User[];
+  // show:boolean=false;
 
   constructor(private userService: UserService, private http: HttpClient) { }
 
