@@ -5,14 +5,14 @@
   </div>
 
   <ul class="list-unstyled components">
-    <li class="active">
-      <a routerLink="/">
-        <i class="fa fa-home-o"></i>
-        <span>Home</span>
-    </a>
+    <li>
+      <a routerLink="/" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">
+          <i class="fa fa-home-o"></i>
+          <span>Home</span>
+      </a>
     </li>
     <li>
-      <a routerLink="/admin">
+      <a routerLink="/admin" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
             <i class="fa fa-user-secret"></i>
             <span>Admin</span>
         </a>
@@ -23,9 +23,9 @@
         <span>Issues</span>
       </a>
       <ul class="collapse list-unstyled" id="issuesMenu">
-        <li><a routerLink="/my-issues">My Issues</a></li>
-        <li><a routerLink="/all-issues">All Issues</a></li>
-        <li><a routerLink="/ongoing-issues">Ongoing Issues</a></li>
+        <li><a routerLink="/my-issues" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">My Issues</a></li>
+        <li><a routerLink="/all-issues" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">All Issues</a></li>
+        <li><a routerLink="/ongoing-issues" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Ongoing Issues</a></li>
       </ul>
     </li>
     <li>
@@ -34,8 +34,8 @@
           <span>Allocations</span>
       </a>
       <ul class="collapse list-unstyled" id="allocationsMenu">
-        <li><a routerLink="/my-allocations">My Allocations</a></li>
-        <li><a routerLink="/all-allocations">All Allocations</a></li>
+        <li><a routerLink="/my-allocations" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">My Allocations</a></li>
+        <li><a routerLink="/all-allocations" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">All Allocations</a></li>
       </ul>
     </li>
     <li>
@@ -44,18 +44,18 @@
           <span>Leave</span>
         </a>
       <ul class="collapse list-unstyled" id="leave">
-        <li><a routerLink="/leave">Apply Leave</a></li>
-        <li><a routerLink="/leave-sheet">Leave Sheet</a></li>
+        <li><a routerLink="/leave" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Apply Leave</a></li>
+        <li><a routerLink="/leave-sheet" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Leave Sheet</a></li>
       </ul>
     </li>
     <li>
-      <a routerLink="/profile">
+      <a routerLink="/profile" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
           <i class="fa fa-user-circle-o"></i>
           <span>Profile</span>
       </a>
     </li>
     <li>
-      <a routerLink="/team">
+      <a routerLink="/team" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
           <i class="fa fa-group"></i>
           <span>Team</span>
       </a>

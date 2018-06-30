@@ -1,8 +1,18 @@
+<div>
+  <ul class="breadcrumb">
+    <li>Team
+      <span>
+          <i class="fa fa-angle-double-right"></i>
+        </span>
+    </li>
+  </ul>
+</div>
+
 <div id="main-min-height">
   <div class="page-content">
 
     <div class="page-title">
-      <h5>Our Team</h5>
+      <h4>Our Team</h4>
     </div>
 
     <div class="page-body">
@@ -17,7 +27,7 @@
                 <div class="mainflip">
                   <div class="frontside">
                     <div class="card">
-                      <div class="card-body text-center">
+                      <div class="card-body center-text">
                         <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png"
                             alt="card image"></p>
                         <h4 class="card-title">{{member.firstName}} {{member.lastName}}</h4>
@@ -28,9 +38,9 @@
                   </div>
                   <div class="backside">
                     <div class="card">
-                      <div class="card-body mt-4 text-center">
+                      <div class="card-body center-text">
                         <h4 class="card-title">{{member.firstName}} {{member.lastName}}</h4>
-                        <p class="card-text">Associate Software Engineer</p>
+                        <p class="card-text">{{member.designation}}</p>
                         <div class="center-align">
                           <div class="form-group">
                             <div class="input-group">

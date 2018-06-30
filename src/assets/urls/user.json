@@ -4,7 +4,7 @@
         "firstName":"Ishan",
         "lastName":"Ayesha",
         "email":"ishana@codegen.net",
-        "designation":"Associate Software Emgineer",
+        "designation":"Associate Software Engineer",
         "mobile":"0714845457",
         "skypeId":"ishanayesha"
     },
@@ -13,7 +13,7 @@
         "firstName":"Saman",
         "lastName":"Kumara",
         "email":"ishana@codegen.net",
-        "designation":"Associate Software Emgineer",
+        "designation":"Associate Software Engineer",
         "mobile":"0714845457",
         "skypeId":"ishanayesha"
     },
@@ -22,7 +22,16 @@
         "firstName":"Kumara",
         "lastName":"Saman",
         "email":"ishana@codegen.net",
-        "designation":"Associate Software Emgineer",
+        "designation":"Associate Software Engineer",
+        "mobile":"0714845457",
+        "skypeId":"ishanayesha"
+    },
+    {
+        "id":1,
+        "firstName":"Kumara",
+        "lastName":"Saman",
+        "email":"ishana@codegen.net",
+        "designation":"Associate Software Engineer",
         "mobile":"0714845457",
         "skypeId":"ishanayesha"
     }

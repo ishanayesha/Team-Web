@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 //modules
-import {CountDown} from "ng4-date-countdown-timer";
+import { CountDown } from "ng4-date-countdown-timer";
 
 //routes
 import { Routing } from './app.routing';
@@ -33,16 +33,28 @@ import { PieChartComponent } from './home/components/charts/pie-chart/pie-chart.
 import { TimelineChartComponent } from './home/components/charts/timeline-chart/timeline-chart.component';
 
 //services
-  //charts
+//charts
 import { GooglePieChartService } from './shared/services/google-charts/google-pie-chart.service';
 import { GoogleChartsBaseService } from './shared/services/google-charts/google-charts-base.service';
 import { GoogleTimelineChartService } from './shared/services/google-charts/google-timeline-chart.service';
 
-  //other services
-  import { UserService } from './shared/services/user.service';
+//user service
+import { UserService } from './shared/services/user.service';
 
-  //auth
-  import { AuthService } from './shared/services/auth.service';  
+//leave service
+import { LeaveService } from './shared/services/leave.service';
+
+//issue service
+import { IssueService } from './shared/services/issue.service';
+
+//allocation service
+import { AllocationService } from './shared/services/allocation.service';
+
+//error handler service
+import { ErrorHandlerService } from './shared/services/error-handler.service';
+
+//auth
+import { AuthService } from './shared/services/auth.service';
 
 //guards
 import { AuthGuard } from './shared/guards/auth.guard';
@@ -83,7 +95,11 @@ import { AuthGuard } from './shared/guards/auth.guard';
     GoogleTimelineChartService,
     AuthGuard,
     AuthService,
-    UserService
+    UserService,
+    LeaveService,
+    IssueService,
+    AllocationService,
+    ErrorHandlerService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,7 @@
+th:not(:nth-child(2)){
+    text-align: center;
+}
+
+.leave{
+    background-color: #0EB01A;color: white;border: 1px solid #D5D5D5;
+}

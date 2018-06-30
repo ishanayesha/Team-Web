@@ -23,60 +23,23 @@
           <tr>
             <th>#</th>
             <th>Name</th>
-            <th>2018-06-10</th>
-            <th>2018-06-10</th>
-            <th>2018-06-10</th>
-            <th>2018-06-10</th>
-            <th>2018-06-10</th>
-            <th>2018-06-10</th>
-            <th>2018-06-10</th>
-            <th>2018-06-10</th>
-            <th>2018-06-10</th>
-            <th>2018-06-10</th>
+            <th *ngFor="let date of sprintPeriod">{{date.substring(5)}}</th>
           </tr>
         </thead>
         <tbody>
-          <tr class="center-text">
-            <td scope="row">1</td>
-            <td style="text-align: left">Mark</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td style="background-color: #0EB01A;color: white;border: 1px solid #D5D5D5">8</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr class="center-text">
-            <td scope="row">2</td>
-            <td style="text-align: left">Mark</td>
-            <td></td>
-            <td style="background-color: #0EB01A;color: white;border: 1px solid #D5D5D5">8</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td style="background-color: #0EB01A;color: white;border: 1px solid #D5D5D5">8</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr class="center-text">
-            <td scope="row">3</td>
-            <td style="text-align: left">Mark</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td style="background-color: #0EB01A;color: white;border: 1px solid #D5D5D5">8</td>
-            <td style="background-color: #0EB01A;color: white;border: 1px solid #D5D5D5">8</td>
+          <tr *ngFor="let leave of leaveArr;let i=index" class="center-text">
+            <td scope="row">{{i+1}}</td>
+            <td style="text-align: left">{{leave.firstName}} {{leave.lastName}}</td>
+
+            <ng-container *ngFor="let date of sprintPeriod">
+              <td [ngClass]="{'leave' : date==leave.date}">
+                <ng-container *ngIf="date==leave.date">
+                  <span *ngIf="leave.type=='full';else halfDay">8</span>
+                  <ng-template #halfDay>4</ng-template>
+                </ng-container>
+              </td>
+            </ng-container>
+
           </tr>
         </tbody>
       </table>
