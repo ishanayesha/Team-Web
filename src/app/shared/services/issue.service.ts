@@ -10,6 +10,17 @@ import { Issue } from '../models/Issue';
 @Injectable()
 export class IssueService {
 
-  constructor() { }
+  constructor(private http: HttpClient, private errorHandler: ErrorHandlerService) { }
+
+  //API end points
+  private getAllIssuesUrl: string = "http://localhost:4200/assets/urls/allIssues.json";
+
+  getAllIssues(): Observable<any[]> {
+    return this.http.get<any[]>(this.getAllIssuesUrl)
+      .pipe(
+      tap(data => console.log("fetched all Issue details")),
+      catchError(this.errorHandler.handleError('getAllIssues', []))
+      );
+  }
 
 }

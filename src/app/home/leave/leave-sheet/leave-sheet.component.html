@@ -17,33 +17,39 @@
     </div>
 
     <div class="page-body">
+      
+      <ng-template [ngIf]="(leaveArr?.length)>0" [ngIfElse]="noResult">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th *ngFor="let date of sprintPeriod">{{date.substring(5)}}</th>
+            </tr>
+          </thead>
+          <tbody>
 
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th *ngFor="let date of sprintPeriod">{{date.substring(5)}}</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let leave of leaveArr;let i=index" class="center-text">
-            <td scope="row">{{i+1}}</td>
-            <td style="text-align: left">{{leave.firstName}} {{leave.lastName}}</td>
+            <tr *ngFor="let leave of leaveArr;let i=index" class="center-text">
+              <td scope="row">{{i+1}}</td>
+              <td style="text-align: left">{{leave.firstName}} {{leave.lastName}}</td>
 
-            <ng-container *ngFor="let date of sprintPeriod">
-              <td [ngClass]="{'leave' : date==leave.date}">
-                <ng-container *ngIf="date==leave.date">
-                  <span *ngIf="leave.type=='full';else halfDay">8</span>
-                  <ng-template #halfDay>4</ng-template>
-                </ng-container>
-              </td>
-            </ng-container>
+              <ng-container *ngFor="let date of sprintPeriod">
+                <td [ngClass]="{'leave' : date==leave.date}">
+                  <ng-container *ngIf="date==leave.date">
+                    <span *ngIf="leave.type=='full';else halfDay">8</span>
+                    <ng-template #halfDay>4</ng-template>
+                  </ng-container>
+                </td>
+              </ng-container>
+            </tr>
 
-          </tr>
-        </tbody>
-      </table>
+          </tbody>
+        </table>
+      </ng-template>
 
+      <ng-template #noResult>
+        No result found
+      </ng-template>
     </div>
   </div>
 </div>

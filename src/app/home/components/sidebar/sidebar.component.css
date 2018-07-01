@@ -44,11 +44,6 @@
     background: #828282;
 }
 
-#sidebar ul li.active > a    {
-    color: #fff;
-    background: #67a8e4;
-}
-
 #sidebar ul li > a[aria-expanded="true"] {
     color: #fff;
     background: #666666;
@@ -82,6 +77,9 @@ li span{
 }
 
 a.active{
-    background: #3EA8C2;
+    background: #5388B4;
+}
+
+a.active span{
     color: #ffffff;
 }
