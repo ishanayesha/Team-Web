@@ -8,18 +8,18 @@ import { ErrorHandlerService } from './error-handler.service';
 import { Issue } from '../models/Issue';
 
 @Injectable()
-export class IssueService {
+export class DashboardService {
 
   constructor(private http: HttpClient, private errorHandler: ErrorHandlerService) { }
 
   //API end points
-  private getAllIssuesUrl: string = "http://localhost:4200/assets/urls/allIssues.json";
+  private getImportantDatesUrl: string = "http://localhost:4200/assets/urls/getImportantDates.json";
 
-  getAllIssues(): Observable<Issue[]> {
-    return this.http.get<Issue[]>(this.getAllIssuesUrl)
+  getImportantDates(): Observable<any[]> {
+    return this.http.get<any[]>(this.getImportantDatesUrl)
       .pipe(
-      tap(data => console.log("fetched all Issue details")),
-      catchError(this.errorHandler.handleError('getAllIssues', []))
+      tap(data => console.log("fetched important dates")),
+      catchError(this.errorHandler.handleError('getImportantDates', []))
       );
   }
 

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PieChartConfig } from '../../shared/models/PieChartConfig';
+import { DashboardService } from '../../shared/services/dashboard.service';
+import { User } from '../../shared/models/User';
 
 @Component({
   selector: 'app-dashboard',
@@ -25,7 +27,9 @@ export class DashboardComponent implements OnInit {
     MilliSeconds: "MilliSeconds"
   };
 
-  constructor() { }
+  importantDates: any[] = [];
+
+  constructor(private dashboardService: DashboardService) { }
 
   ngOnInit(): void {
 
@@ -39,6 +43,13 @@ export class DashboardComponent implements OnInit {
 
     this.config1 = new PieChartConfig('My Daily Activities at 20 years old', 0.4);
     this.elementId1 = 'myPieChart1';
+
+    //load codefreeze date
+    this.dashboardService.getImportantDates().subscribe(
+      data => this.importantDates = data
+    );
+
+
   }
 
   addLeave() {

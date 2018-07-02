@@ -53,6 +53,9 @@ import { AllocationService } from './shared/services/allocation.service';
 //error handler service
 import { ErrorHandlerService } from './shared/services/error-handler.service';
 
+//dashboard service
+import { DashboardService } from './shared/services/dashboard.service';
+
 //auth
 import { AuthService } from './shared/services/auth.service';
 
@@ -99,6 +102,7 @@ import { AuthGuard } from './shared/guards/auth.guard';
     LeaveService,
     IssueService,
     AllocationService,
+    DashboardService,
     ErrorHandlerService
   ],
   bootstrap: [AppComponent]
