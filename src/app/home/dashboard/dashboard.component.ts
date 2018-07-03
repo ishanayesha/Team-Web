@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { PieChartConfig } from '../../shared/models/PieChartConfig';
 import { DashboardService } from '../../shared/services/dashboard.service';
+import { LeaveService } from '../../shared/services/leave.service';
 import { User } from '../../shared/models/User';
+import { Leave } from '../../shared/models/Leave';
+import { DatePipe } from '@angular/common'
 
 @Component({
   selector: 'app-dashboard',
@@ -11,6 +14,10 @@ import { User } from '../../shared/models/User';
 export class DashboardComponent implements OnInit {
 
   newLeaveDiv: boolean = false;
+  importantDates: any[] = [];
+  remainingDays = null;
+  environments: any[] = [];
+  leaveDetails: Leave[] = [];
 
   data1: any[];
   config1: PieChartConfig;
@@ -27,9 +34,9 @@ export class DashboardComponent implements OnInit {
     MilliSeconds: "MilliSeconds"
   };
 
-  importantDates: any[] = [];
 
-  constructor(private dashboardService: DashboardService) { }
+
+  constructor(private dashboardService: DashboardService, private leaveService: LeaveService, private datepipe: DatePipe) { }
 
   ngOnInit(): void {
 
@@ -44,14 +51,30 @@ export class DashboardComponent implements OnInit {
     this.config1 = new PieChartConfig('My Daily Activities at 20 years old', 0.4);
     this.elementId1 = 'myPieChart1';
 
-    //load codefreeze date
+    //load important dates
+    let today: Date = new Date(this.datepipe.transform(new Date(), 'yyyy-MM-dd'))
+
     this.dashboardService.getImportantDates().subscribe(
-      data => this.importantDates = data
+      data => {
+        this.importantDates = data,
+          this.remainingDays = Math.abs(Math.abs(new Date(this.importantDates["endDate"]).getTime() - today.getTime()) / (1000 * 3600 * 24));
+      }
     );
 
+    //load leave details
+    this.leaveService.getTodayLeaveSheet().subscribe(
+      data => {
+        this.leaveDetails = data
+      }
+    );
 
+    //load environment details
+    this.dashboardService.getEnvironmentDetails().subscribe(
+      data => this.environments = data
+    );
   }
 
+  //div show hide
   addLeave() {
     this.newLeaveDiv = !this.newLeaveDiv;
   }

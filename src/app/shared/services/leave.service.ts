@@ -15,6 +15,7 @@ export class LeaveService {
 
   //API end points
   private getAllLeaveUrl: string = "http://localhost:4200/assets/urls/leaveSheet.json";
+  private getTodayLeaveSheetUrl: string = "http://localhost:4200/assets/urls/todayLeaveSheet.json";
 
   getAllLeave(): Observable<Leave[]> {
     return this.http.get<Leave[]>(this.getAllLeaveUrl)
@@ -24,4 +25,11 @@ export class LeaveService {
       );
   }
 
+  getTodayLeaveSheet(): Observable<Leave[]> {
+    return this.http.get<Leave[]>(this.getTodayLeaveSheetUrl)
+      .pipe(
+      tap(data => console.log("fetched today leave details")),
+      catchError(this.errorHandler.handleError('getTodayLeaveSheet', []))
+      );
+  }
 }

@@ -4,7 +4,7 @@
     Current Sprint: 48
   </div>
   <div class="col-md-3 dashboard-blue-card">
-    Code Freeze: 2018-08-08 
+    Code Freeze: {{importantDates.codeFrezeDate}}
   </div>
   <div class="col-md-3 dashboard-blue-card">
     asas
@@ -67,7 +67,7 @@
               </tr>
               <tr>
                 <td>Days Remaining</td>
-                <td>6</td>
+                <td>{{remainingDays}}</td>
               </tr>
               <tr>
                 <td>Start Date</td>
@@ -99,7 +99,7 @@
 
 
     <!-- leave sheet start -->
-    <div class="col-md-6">
+    <div class="col-md-8">
       <div class="card" id="leave-sheet">
 
         <div class="card-title">
@@ -150,41 +150,37 @@
         </div>
 
         <div class="card-content">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Leave Type</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td scope="row">1</td>
-                <td>Mark</td>
-                <td>Otto</td>
-              </tr>
-              <tr>
-                <td scope="row">2</td>
-                <td>Jacob</td>
-                <td>Thornton</td>
-              </tr>
-              <tr>
-                <td scope="row">3</td>
-                <td>Larry</td>
-                <td>the Bird</td>
-              </tr>
-            </tbody>
-          </table>
+          <div *ngIf="(leaveDetails?.length)>0;else noResult">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Leave Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let leave of leaveDetails;let i=index">
+                  <td scope="row">{{i+1}}</td>
+                  <td>{{leave.firstName}} {{leave.lastName}}</td>
+                  <td>
+                    <span *ngIf="leave.type=='full'">Full Day</span>
+                    <span *ngIf="leave.type=='half'">Half Day</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <ng-template #noResult>No result found</ng-template>
 
         </div>
       </div>
     </div>
     <!-- leave sheet end -->
 
-
     <!-- details panel start-->
-    <div class="col-md-6">
+    <div class="col-md-4">
       <div class="card">
 
         <div class="card-title">
@@ -194,33 +190,9 @@
         <div class="card-content">
           <table class="table">
             <tbody>
-              <tr>
-                <td>Current Sprint</td>
-                <td>46</td>
-              </tr>
-              <tr>
-                <td>Days Remaining</td>
-                <td>6</td>
-              </tr>
-              <tr>
-                <td>Start Date</td>
-                <td>2018-04-18</td>
-              </tr>
-              <tr>
-                <td>End Date</td>
-                <td>2018-04-18</td>
-              </tr>
-              <tr>
-                <td>Code Fereze</td>
-                <td>2018-04-18</td>
-              </tr>
-              <tr>
-                <td>Regression</td>
-                <td>2018-04-18</td>
-              </tr>
-              <tr>
-                <td>Hand Over</td>
-                <td>2018-04-18</td>
+              <tr *ngFor="let env of environments">
+                <td>{{env.environment}}</td>
+                <td>{{env.version}}</td>
               </tr>
             </tbody>
           </table>
@@ -233,5 +205,5 @@
     <div class="col-md-6"></div>
 
 
-    
+
   </div>

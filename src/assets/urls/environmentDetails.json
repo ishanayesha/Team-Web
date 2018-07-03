@@ -1,0 +1,14 @@
+[
+    {
+        "environment": "yellow",
+        "version": "12"
+    },
+    {
+        "environment": "brown",
+        "version": "55"
+    },
+    {
+        "environment": "green",
+        "version": "66"
+    }
+]

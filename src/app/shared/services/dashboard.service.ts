@@ -13,7 +13,8 @@ export class DashboardService {
   constructor(private http: HttpClient, private errorHandler: ErrorHandlerService) { }
 
   //API end points
-  private getImportantDatesUrl: string = "http://localhost:4200/assets/urls/getImportantDates.json";
+  private getImportantDatesUrl: string = "http://localhost:4200/assets/urls/getImportantDates.json"
+  private getEnvironmentDetailsUrl: string = "http://localhost:4200/assets/urls/environmentDetails.json";
 
   getImportantDates(): Observable<any[]> {
     return this.http.get<any[]>(this.getImportantDatesUrl)
@@ -23,4 +24,11 @@ export class DashboardService {
       );
   }
 
+  getEnvironmentDetails(): Observable<any[]> {
+    return this.http.get<any[]>(this.getEnvironmentDetailsUrl)
+      .pipe(
+      tap(data => console.log("fetched environment details")),
+      catchError(this.errorHandler.handleError('getEnvironmentDetails', []))
+      );
+  }
 }

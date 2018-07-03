@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { DatePipe } from '@angular/common'
 
 //modules
 import { CountDown } from "ng4-date-countdown-timer";
@@ -103,7 +104,8 @@ import { AuthGuard } from './shared/guards/auth.guard';
     IssueService,
     AllocationService,
     DashboardService,
-    ErrorHandlerService
+    ErrorHandlerService,
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

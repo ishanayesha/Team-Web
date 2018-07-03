@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "firstName": "Ishan",
+        "lastName": "Ayesha",
+        "type": "full"
+    },
+    {
+        "id": 1,
+        "firstName": "Saman",
+        "lastName": "Kuamra",
+        "type": "half"
+    },
+    {
+        "id": 1,
+        "firstName": "Kumara",
+        "lastName": "Samantha",
+        "type": "full"
+    }
+]

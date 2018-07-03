@@ -50,7 +50,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                       <span class="navbar-links glyphicon glyphicon-user"></span> 
-                      <strong class="navbar-links">Ishan</strong>
+                      <strong class="navbar-links">{{myProfile?.firstName}}</strong>
                       <span class="navbar-links glyphicon glyphicon-chevron-down"></span>
               </a>
           <ul class="dropdown-menu">
@@ -63,8 +63,8 @@
                     </p>
                   </div>
                   <div class="col-lg-8">
-                    <p class="text-left"><strong>Ishan Ayesha</strong></p>
-                    <p class="text-left small">Associate Software Engineer</p>
+                    <p class="text-left"><strong>{{myProfile?.firstName}} {{myProfile?.lastName}}</strong></p>
+                    <p class="text-left small">{{myProfile?.designation}}</p>
                     <p class="text-left">
                       <a routerLink="/profile" class="btn btn-primary btn-block btn-sm">My Profile</a>
                     </p>
