@@ -1,23 +1,53 @@
 [
     {
-        "id": 1,
-        "firstName": "Ishan",
-        "lastName": "Ayesha",
-        "date": "2018-06-16",
-        "type": "full"
+        "jiraId": "VH-7260",
+        "theme": "Ishan",
+        "type": "Ayesha",
+        "summary": "2018-06-16",
+        "status": "Open",
+        "dev": "Ishan",
+        "qa": "Ashan",
+        "devStart": "2018-01-10",
+        "devEnd": "2018-01-10",
+        "qaStart": "2018-01-10",
+        "qaEnd": "2018-01-10",
+        "devAnalysis": 2,
+        "devEstimate": 2,
+        "qaAnalysis": 2,
+        "qaEstimate": 2
     },
     {
-        "id": 1,
-        "firstName": "Saman",
-        "lastName": "Kuamra",
-        "date": "2018-06-11",
-        "type": "half"
+        "jiraId": "VH-7260",
+        "theme": "Ishan",
+        "type": "Ayesha",
+        "summary": "2018-06-16",
+        "status": "Open",
+        "dev": "Ishan",
+        "qa": "Ashan",
+        "devStart": "2018-01-10",
+        "devEnd": "2018-01-10",
+        "qaStart": "2018-01-10",
+        "qaEnd": "2018-01-10",
+        "devAnalysis": 2,
+        "devEstimate": 2,
+        "qaAnalysis": 2,
+        "qaEstimate": 2
     },
     {
-        "id": 1,
-        "firstName": "Kumara",
-        "lastName": "Saman",
-        "date": "2018-06-13",
-        "type": "full"
+        "jiraId": "VH-7260",
+        "theme": "Ishan",
+        "type": "Ayesha",
+        "summary": "2018-06-16",
+        "status": "Open",
+        "dev": "Ishan",
+        "qa": "Ashan",
+        "devStart": "2018-01-10",
+        "devEnd": "2018-01-10",
+        "qaStart": "2018-01-10",
+        "qaEnd": "2018-01-10",
+        "devAnalysis": 2,
+        "devEstimate": 2,
+        "qaAnalysis": 2,
+        "qaEstimate": 2
     }
 ]

@@ -66,61 +66,23 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>VH-7260</td>
-                <td>H2H Change Requests</td>
-                <td>Production Issue</td>
-                <td>Pegasus Booking the Incorrect Rate Code</td>
-                <td style="background: #FA4005;text-align: center">Open</td>
-                <td>Ishan</td>
-                <td>Ishan</td>
-                <td class="center-align">2</td>
-                <td class="center-align">2</td>
-                <td class="center-align dev-column-color">2</td>
-                <td class="center-align">2</td>
-                <td class="center-align">2</td>
-                <td class="center-align qa-column-color">2</td>
-                <td class="center-align tot-effort-column-color">2</td>
+              <tr *ngFor="let issue of issues;let i=index">
+                <td>{{i+1}}</td>
+                <td>{{issue.jiraId}}</td>
+                <td>{{issue.theme}}</td>
+                <td>{{issue.type}}</td>
+                <td>{{issue.summary}}</td>
+                <td style="background: #FA4005;text-align: center">{{issue.status}}</td>
+                <td>{{issue.dev}}</td>
+                <td>{{issue.qa}}</td>
+                <td class="center-align">{{issue.devAnalysis}}</td>
+                <td class="center-align">{{issue.devEstimate}}</td>
+                <td class="center-align dev-column-color">4</td>
+                <td class="center-align">{{issue.qaAnalysis}}</td>
+                <td class="center-align">{{issue.qaEstimate}}</td>
+                <td class="center-align qa-column-color">4</td>
+                <td class="center-align tot-effort-column-color">44</td>
                 <!-- <td style="background: #FA4005;text-align: center">Open</td>
-            <td style="text-align: center"><i class="glyphicon glyphicon-new-window"></i></td> -->
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>VH-7260</td>
-                <td>H2H Change Requests</td>
-                <td>Production Issue</td>
-                <td>Pegasus Booking the Incorrect Rate Code</td>
-                <td style="background: #FA4005;text-align: center">Open</td>
-                <td>Ishan</td>
-                <td>Ishan</td>
-                <td class="center-align">2</td>
-                <td class="center-align">2</td>
-                <td class="center-align dev-column-color">2</td>
-                <td class="center-align">2</td>
-                <td class="center-align">2</td>
-                <td class="center-align qa-column-color">2</td>
-                <td class="center-align tot-effort-column-color">2</td>
-                <!-- <td style="background: #FA4005;text-align: center">Open</td>
-            <td style="text-align: center"><i class="glyphicon glyphicon-new-window"></i></td> -->
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>VH-7260</td>
-                <td>H2H Change Requests</td>
-                <td>Production Issue</td>
-                <td>Pegasus Booking the Incorrect Rate Code</td>
-                <td style="background: #FA4005;text-align: center">Open</td>
-                <td>Ishan</td>
-                <td>Ishan</td>
-                <td class="center-align">2</td>
-                <td class="center-align">2</td>
-                <td class="center-align dev-column-color">2</td>
-                <td class="center-align">2</td>
-                <td class="center-align">2</td>
-                <td class="center-align qa-column-color">2</td>
-                <td class="center-align tot-effort-column-color">2</td>
-                <!-- <td style="background: #EDB506;text-align: center">Open</td>
             <td style="text-align: center"><i class="glyphicon glyphicon-new-window"></i></td> -->
               </tr>
             </tbody>

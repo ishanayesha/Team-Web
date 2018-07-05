@@ -189,6 +189,12 @@
 
         <div class="card-content">
           <table class="table">
+            <thead>
+              <tr>
+                <th>Environment</th>
+                <th>version</th>
+              </tr>
+            </thead>
             <tbody>
               <tr *ngFor="let env of environments">
                 <td>{{env.environment}}</td>
