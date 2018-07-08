@@ -13,14 +13,15 @@ export class DashboardService {
   constructor(private http: HttpClient, private errorHandler: ErrorHandlerService) { }
 
   //API end points
-  private getImportantDatesUrl: string = "http://localhost:4200/assets/urls/getImportantDates.json"
+  private getCurrentSprintUrl: string = "http://localhost:4200/assets/urls/currentSprint.json"
   private getEnvironmentDetailsUrl: string = "http://localhost:4200/assets/urls/environmentDetails.json";
+  private getSprintSummaryUrl: string = "http://localhost:4200/assets/urls/sprintSummary.json";  
 
-  getImportantDates(): Observable<any[]> {
-    return this.http.get<any[]>(this.getImportantDatesUrl)
+  getCurrentSprint(): Observable<any[]> {
+    return this.http.get<any[]>(this.getCurrentSprintUrl)
       .pipe(
-      tap(data => console.log("fetched important dates")),
-      catchError(this.errorHandler.handleError('getImportantDates', []))
+      tap(data => console.log("fetched current sprint data")),
+      catchError(this.errorHandler.handleError('getCurrentSprint', []))
       );
   }
 
@@ -29,6 +30,14 @@ export class DashboardService {
       .pipe(
       tap(data => console.log("fetched environment details")),
       catchError(this.errorHandler.handleError('getEnvironmentDetails', []))
+      );
+  }
+
+  getSprintSummary(): Observable<any[]> {
+    return this.http.get<any[]>(this.getSprintSummaryUrl)
+      .pipe(
+      tap(data => console.log("fetched sprint summary")),
+      catchError(this.errorHandler.handleError('getSprintSummary', []))
       );
   }
 }

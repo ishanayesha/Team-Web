@@ -14,14 +14,15 @@ import { DatePipe } from '@angular/common'
 export class DashboardComponent implements OnInit {
 
   newLeaveDiv: boolean = false;
-  importantDates: any[] = [];
-  remainingDays = null;
+  currentSprint: any[] = [];
+  remainingDays: number = null;
   environments: any[] = [];
   leaveDetails: Leave[] = [];
+  sprintSummary: number[] = [];
 
-  data1: any[];
-  config1: PieChartConfig;
-  elementId1: String;
+  data: any[];
+  config: PieChartConfig;
+  elementId: String;
 
   text: any = {
     Year: 'Year',
@@ -34,30 +35,36 @@ export class DashboardComponent implements OnInit {
     MilliSeconds: "MilliSeconds"
   };
 
-
-
   constructor(private dashboardService: DashboardService, private leaveService: LeaveService, private datepipe: DatePipe) { }
 
   ngOnInit(): void {
 
-    //Piechart1 Data & Config
-    this.data1 = [['Task', 'Hours per Day'],
-    ['Eat', 3],
-    ['Commute', 2],
-    ['Watch TV', 5],
-    ['Video games', 4],
-    ['Sleep', 10]];
+    this.config = new PieChartConfig('Current Sprint Summary', 0.4);
+    this.elementId = 'myPieChart';
 
-    this.config1 = new PieChartConfig('My Daily Activities at 20 years old', 0.4);
-    this.elementId1 = 'myPieChart1';
+    //load sprint summary
+    this.dashboardService.getSprintSummary().subscribe(
+      p => {
+        this.sprintSummary = p
+
+        this.data = [['Task', 'Count'],
+        ['Not Started', this.sprintSummary['notStarted']],
+        ['Inprogress', this.sprintSummary['inprogress']],
+        ['On Hold', this.sprintSummary['onhold']],
+        ['Verified', this.sprintSummary['verified']],
+        ['Closed', this.sprintSummary['close']]]
+      });
+
 
     //load important dates
-    let today: Date = new Date(this.datepipe.transform(new Date(), 'yyyy-MM-dd'))
+    let today: Date = new Date(this.datepipe.transform(new Date(), 'yyyy-MM-dd'));
+    let differenece: number = 0;
 
-    this.dashboardService.getImportantDates().subscribe(
+    this.dashboardService.getCurrentSprint().subscribe(
       data => {
-        this.importantDates = data,
-          this.remainingDays = Math.abs(Math.abs(new Date(this.importantDates["endDate"]).getTime() - today.getTime()) / (1000 * 3600 * 24));
+        this.currentSprint = data,
+          differenece = (new Date(this.currentSprint["endDate"]).getTime() - today.getTime()) / (1000 * 3600 * 24);
+        this.remainingDays = differenece > 0 ? differenece : 0;
       }
     );
 
@@ -72,11 +79,11 @@ export class DashboardComponent implements OnInit {
     this.dashboardService.getEnvironmentDetails().subscribe(
       data => this.environments = data
     );
+
   }
 
   //div show hide
   addLeave() {
     this.newLeaveDiv = !this.newLeaveDiv;
   }
-
 }

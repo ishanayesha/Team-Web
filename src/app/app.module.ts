@@ -63,6 +63,10 @@ import { AuthService } from './shared/services/auth.service';
 //guards
 import { AuthGuard } from './shared/guards/auth.guard';
 
+//pipes
+import { IssuesSearchFilter } from './shared/pipes/issues-search.pipe';
+import { SortIssuesPipe } from './shared/pipes/sort-issues.pipe';
+import { MembersSearchPipe } from './shared/pipes/members-search.pipe';
 
 @NgModule({
   declarations: [
@@ -85,7 +89,10 @@ import { AuthGuard } from './shared/guards/auth.guard';
     AllAllocationsComponent,
     MyIssuesComponent,
     OngoingIssuesComponent,
-    LeaveSheetComponent
+    LeaveSheetComponent,
+    IssuesSearchFilter,
+    SortIssuesPipe,
+    MembersSearchPipe
   ],
   imports: [
     BrowserModule,

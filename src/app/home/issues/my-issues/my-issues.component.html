@@ -16,89 +16,89 @@
     </div>
 
     <div class="page-body">
+      <ng-template [ngIf]="(issues?.length)>0" [ngIfElse]="noResult">
 
-      <div class="row">
-        <div class="col-md-12">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Jira ID</th>
-                <th>Theme</th>
-                <th>Type</th>
-                <th>Jiara Summary</th>
-                <th style="text-align: center">Status</th>
-                <th>Dev</th>
-                <th>QA</th>
-                <th>Analysis Est</th>
-                <th>Total Dev Est</th>
-                <th>Rec/TCW Est</th>
-                <th>Testing Est</th>
-                <th>Total QA Est</th>
-                <th>Totla Effort</th>
-                <!-- <th style="text-align: center">Status</th>
+        <div class="row">
+          <div class="col-md-12">
+
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Jira ID</th>
+                  <th>Theme</th>
+                  <th>Type</th>
+                  <th>Jiara Summary</th>
+                  <th style="text-align: center">Status</th>
+
+                  <ng-template [ngIf]="(issues[0].dev)">
+                    <th>Dev</th>
+                    <th>Rec/TCW Est</th>
+                    <th>Testing Est</th>
+                    <th>Total QA Est</th>
+                  </ng-template>
+
+                  <ng-template [ngIf]="(issues[0].qa)">
+                    <th>QA</th>
+                    <th>Analysis Est</th>
+                    <th>Dev Est</th>
+                    <th>Total Dev Est</th>
+                  </ng-template>
+                  <!-- <th style="text-align: center">Status</th>
             <th style="text-align: center">Allocation</th> -->
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>VH-7260</td>
-                <td>H2H Change Requests</td>
-                <td>Production Issue</td>
-                <td>Pegasus Booking the Incorrect Rate Code</td>
-                <td style="background: #FA4005;text-align: center">Open</td>
-                <td>Ishan</td>
-                <td>Ishan</td>
-                <td class="center-align">2</td>
-                <td class="center-align dev-column-color">2</td>
-                <td class="center-align">2</td>
-                <td class="center-align">2</td>
-                <td class="center-align qa-column-color">2</td>
-                <td class="center-align tot-effort-column-color">2</td>
-                <!-- <td style="background: #FA4005;text-align: center">Open</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let issue of issues;let i=index">
+                  <td>{{i+1}}</td>
+                  <td><a target="#" href="{{issue.jiraIdLink}}">{{issue.jiraId}}</a></td>
+                  <td>{{issue.theme}}</td>
+                  <td>{{issue.type}}</td>
+                  <td>{{issue.summary}}</td>
+                  <td style="background: #FA4005;text-align: center">{{issue.status}}</td>
+
+                  <ng-template [ngIf]="(issues[0].dev)">
+                    <td>{{issue.dev}}</td>
+                    <td class="center-align">{{issue.qaAnalysis}}</td>
+                    <td class="center-align">{{issue.qaEstimate}}</td>
+                    <td class="center-align qa-column-color">4</td>
+                  </ng-template>
+
+                  <ng-template [ngIf]="(issues[0].qa)">
+                    <td>{{issue.qa}}</td>
+                    <td class="center-align">{{issue.devAnalysis}}</td>
+                    <td class="center-align">{{issue.devEstimate}}</td>
+                    <td class="center-align dev-column-color">4</td>
+                  </ng-template>
+                  <!-- <td class="center-align tot-effort-column-color">44</td> -->
+                </tr>
+                <!-- <tr>
+                  <td>2</td>
+                  <td>VH-7260</td>
+                  <td>H2H Change Requests</td>
+                  <td>Production Issue</td>
+                  <td>Pegasus Booking the Incorrect Rate Code</td>
+                  <td style="background: #FA4005;text-align: center">Open</td>
+                  <td>Ishan</td>
+                  <td>Ishan</td>
+                  <td class="center-align">2</td>
+                  <td class="center-align dev-column-color">2</td>
+                  <td class="center-align">2</td>
+                  <td class="center-align">2</td>
+                  <td class="center-align qa-column-color">2</td>
+                  <td class="center-align tot-effort-column-color">2</td>
+                  <!-- <td style="background: #FA4005;text-align: center">Open</td>
             <td style="text-align: center"><i class="glyphicon glyphicon-new-window"></i></td> -->
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>VH-7260</td>
-                <td>H2H Change Requests</td>
-                <td>Production Issue</td>
-                <td>Pegasus Booking the Incorrect Rate Code</td>
-                <td style="background: #FA4005;text-align: center">Open</td>
-                <td>Ishan</td>
-                <td>Ishan</td>
-                <td class="center-align">2</td>
-                <td class="center-align dev-column-color">2</td>
-                <td class="center-align">2</td>
-                <td class="center-align">2</td>
-                <td class="center-align qa-column-color">2</td>
-                <td class="center-align tot-effort-column-color">2</td>
-                <!-- <td style="background: #FA4005;text-align: center">Open</td>
-            <td style="text-align: center"><i class="glyphicon glyphicon-new-window"></i></td> -->
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>VH-7260</td>
-                <td>H2H Change Requests</td>
-                <td>Production Issue</td>
-                <td>Pegasus Booking the Incorrect Rate Code</td>
-                <td style="background: #FA4005;text-align: center">Open</td>
-                <td>Ishan</td>
-                <td>Ishan</td>
-                <td class="center-align">2</td>
-                <td class="center-align dev-column-color">2</td>
-                <td class="center-align">2</td>
-                <td class="center-align">2</td>
-                <td class="center-align qa-column-color">2</td>
-                <td class="center-align tot-effort-column-color">2</td>
-                <!-- <td style="background: #EDB506;text-align: center">Open</td>
-            <td style="text-align: center"><i class="glyphicon glyphicon-new-window"></i></td> -->
-              </tr>
-            </tbody>
-          </table>
+                <!--</tr> -->
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
+      </ng-template>
+
+      <ng-template #noResult>
+        No results found
+      </ng-template>
 
     </div>
   </div>

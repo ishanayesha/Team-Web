@@ -1,6 +1,20 @@
 [
     {
-        "jiraId": "VH-7260",
+        "jiraId": "VH-7263",
+        "jiraIdLink": "http://localhost:4200/all-issues",
+        "theme": "Ishan",
+        "type": "H2H Change",
+        "summary": "2018-06-16",
+        "status": "Open",
+        "dev": "Ishan",
+        "qa": "Kamal",
+        "devStart": "2018-01-10",
+        "devEnd": "2018-01-10",
+        "qaStart": "2018-01-10",
+        "qaEnd": "2018-01-10"
+    },
+    {
+        "jiraId": "VH-7261",
         "jiraIdLink": "http://localhost:4200/all-issues",
         "theme": "Ishan",
         "type": "H2H Change",
@@ -11,17 +25,13 @@
         "devStart": "2018-01-10",
         "devEnd": "2018-01-10",
         "qaStart": "2018-01-10",
-        "qaEnd": "2018-01-10",
-        "devAnalysis": 2,
-        "devEstimate": 2,
-        "qaAnalysis": 2,
-        "qaEstimate": 2
+        "qaEnd": "2018-01-10"
     },
     {
-        "jiraId": "VH-7260",
+        "jiraId": "VH-7262",
         "jiraIdLink": "http://localhost:4200/all-issues",
         "theme": "Ishan",
-        "type": "Ayesha",
+        "type": "H2H Change",
         "summary": "2018-06-16",
         "status": "Open",
         "dev": "Ishan",
@@ -29,28 +39,6 @@
         "devStart": "2018-01-10",
         "devEnd": "2018-01-10",
         "qaStart": "2018-01-10",
-        "qaEnd": "2018-01-10",
-        "devAnalysis": 2,
-        "devEstimate": 2,
-        "qaAnalysis": 2,
-        "qaEstimate": 2
-    },
-    {
-        "jiraId": "VH-7260",
-        "jiraIdLink": "http://localhost:4200/all-issues",
-        "theme": "Ishan",
-        "type": "Ayesha",
-        "summary": "2018-06-16",
-        "status": "Open",
-        "dev": "Ishan",
-        "qa": "Ashan",
-        "devStart": "2018-01-10",
-        "devEnd": "2018-01-10",
-        "qaStart": "2018-01-10",
-        "qaEnd": "2018-01-10",
-        "devAnalysis": 2,
-        "devEstimate": 2,
-        "qaAnalysis": 2,
-        "qaEstimate": 2
+        "qaEnd": "2018-01-10"
     }
 ]

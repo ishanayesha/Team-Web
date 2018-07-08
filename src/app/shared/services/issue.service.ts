@@ -14,6 +14,8 @@ export class IssueService {
 
   //API end points
   private getAllIssuesUrl: string = "http://localhost:4200/assets/urls/allIssues.json";
+  private getMyIssuesUrl: string = "http://localhost:4200/assets/urls/myIssues.json";
+  private getOngoingIssuesUrl: string = "http://localhost:4200/assets/urls/ongoingIssues.json";
 
   getAllIssues(): Observable<Issue[]> {
     return this.http.get<Issue[]>(this.getAllIssuesUrl)
@@ -23,4 +25,21 @@ export class IssueService {
       );
   }
 
+  getMyIssues(userId: number): Observable<Issue[]> {
+
+    const url = `${this.getMyIssuesUrl}/${userId}`;
+    return this.http.get<Issue[]>(this.getMyIssuesUrl)
+      .pipe(
+      tap(data => console.log(`fetched My Issues details userid=${userId}`)),
+      catchError(this.errorHandler.handleError('getMyIssues', []))
+      );
+  }
+
+  getOngoingIssues(): Observable<Issue[]> {
+    return this.http.get<Issue[]>(this.getOngoingIssuesUrl)
+      .pipe(
+      tap(data => console.log("fetched ongoing issues")),
+      catchError(this.errorHandler.handleError('getOngoingIssues', []))
+      );
+  }
 }

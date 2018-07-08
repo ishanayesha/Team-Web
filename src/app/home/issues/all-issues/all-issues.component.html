@@ -23,73 +23,80 @@
     </div>
 
     <div class="page-body">
+      <ng-template [ngIf]="(issues?.length)>0" [ngIfElse]="noResult">
 
-      <table id="filter-table" class="table" *ngIf="showFilters">
-        <tr class="filter-text-fileds">
-          <th>
-            <input type="text" class="form-control" placeholder="Jira ID">
-          </th>
-          <th>
-            <input type="text" class="form-control" placeholder="Type">
-          </th>
-          <th>
-            <input type="text" class="form-control" placeholder="Dev">
-          </th>
-          <th>
-            <input type="text" class="form-control" placeholder="QA">
-          </th>
-        </tr>
-      </table>
+        <table id="filter-table" class="table" *ngIf="showFilters">
+          <tr class="filter-text-fileds">
+            <th>
+              <input type="text" class="form-control" placeholder="Jira ID">
+            </th>
+            <th>
+              <input type="text" class="form-control" placeholder="Type">
+            </th>
+            <th>
+              <input type="text" class="form-control" placeholder="Dev">
+            </th>
+            <th>
+              <input type="text" class="form-control" placeholder="QA">
+            </th>
+          </tr>
+        </table>
 
-      <div class="row">
-        <div class="col-md-12">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Jira ID</th>
-                <th>Theme</th>
-                <th>Type</th>
-                <th>Jiara Summary</th>
-                <th style="text-align: center">Status</th>
-                <th>Dev</th>
-                <th>QA</th>
-                <th>Analysis Est</th>
-                <th>Dev Est</th>
-                <th>Total Dev Est</th>
-                <th>Rec/TCW Est</th>
-                <th>Testing Est</th>
-                <th>Total QA Est</th>
-                <th>Totla Effort</th>
-                <!-- <th style="text-align: center">Status</th>
+        <div class="row">
+          <div class="col-md-12">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Jira ID</th>
+                  <th>Theme</th>
+                  <th>Type</th>
+                  <th>Jiara Summary</th>
+                  <th style="text-align: center">Status</th>
+                  <th>Dev</th>
+                  <th>QA</th>
+                  <th>Analysis Est</th>
+                  <th>Dev Est</th>
+                  <th>Total Dev Est</th>
+                  <th>Rec/TCW Est</th>
+                  <th>Testing Est</th>
+                  <th>Total QA Est</th>
+                  <th>Totla Effort</th>
+                  <!-- <th style="text-align: center">Status</th>
             <th style="text-align: center">Allocation</th> -->
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let issue of issues;let i=index">
-                <td>{{i+1}}</td>
-                <td>{{issue.jiraId}}</td>
-                <td>{{issue.theme}}</td>
-                <td>{{issue.type}}</td>
-                <td>{{issue.summary}}</td>
-                <td style="background: #FA4005;text-align: center">{{issue.status}}</td>
-                <td>{{issue.dev}}</td>
-                <td>{{issue.qa}}</td>
-                <td class="center-align">{{issue.devAnalysis}}</td>
-                <td class="center-align">{{issue.devEstimate}}</td>
-                <td class="center-align dev-column-color">4</td>
-                <td class="center-align">{{issue.qaAnalysis}}</td>
-                <td class="center-align">{{issue.qaEstimate}}</td>
-                <td class="center-align qa-column-color">4</td>
-                <td class="center-align tot-effort-column-color">44</td>
-                <!-- <td style="background: #FA4005;text-align: center">Open</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let issue of issues;let i=index">
+                  <td>{{i+1}}</td>
+                  <td><a target="#" href="{{issue.jiraIdLink}}">{{issue.jiraId}}</a></td>
+                  <td>{{issue.theme}}</td>
+                  <td>{{issue.type}}</td>
+                  <td>{{issue.summary}}</td>
+                  <td style="background: #FA4005;text-align: center">{{issue.status}}</td>
+                  <td>{{issue.dev}}</td>
+                  <td>{{issue.qa}}</td>
+                  <td class="center-align">{{issue.devAnalysis}}</td>
+                  <td class="center-align">{{issue.devEstimate}}</td>
+                  <td class="center-align dev-column-color">4</td>
+                  <td class="center-align">{{issue.qaAnalysis}}</td>
+                  <td class="center-align">{{issue.qaEstimate}}</td>
+                  <td class="center-align qa-column-color">4</td>
+                  <td class="center-align tot-effort-column-color">44</td>
+                  <!-- <td style="background: #FA4005;text-align: center">Open</td>
             <td style="text-align: center"><i class="glyphicon glyphicon-new-window"></i></td> -->
-              </tr>
-            </tbody>
-          </table>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
+      </ng-template>
+
+      <ng-template #noResult>
+        No results found
+      </ng-template>
 
     </div>
+
   </div>
 </div>

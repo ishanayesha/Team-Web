@@ -1,10 +1,10 @@
 <div id="main-min-height">
 
   <div class="col-md-3 dashboard-blue-card">
-    Current Sprint: 48
+    Current Sprint: {{currentSprint.sprint}}
   </div>
   <div class="col-md-3 dashboard-blue-card">
-    Code Freeze: {{importantDates.codeFrezeDate}}
+    Code Freeze: {{currentSprint.codeFrezeDate}}
   </div>
   <div class="col-md-3 dashboard-blue-card">
     asas
@@ -24,8 +24,13 @@
           <h4>Sprint Summary</h4>
         </div>
 
-        <div class="card-content">
-          <app-pie-chart [data]="data1" [config]="config1" [elementId]="elementId1"></app-pie-chart>
+        <div class="card-content" *ngIf='data'>
+          <app-pie-chart [data]="data" [config]="config" [elementId]="elementId"></app-pie-chart>
+
+          
+          <div class="alert alert-info center-text" role="alert">
+            View Sprint summary detail report : <span><a target="#" href=""><strong>Click Here </strong><i class="fa fa-external-link"></i></a></span>
+          </div>
         </div>
 
       </div>
@@ -42,7 +47,7 @@
         </div>
 
         <div class="card-content">
-          <countdown units="Days | Hours | Minutes | Seconds" end="{{importantDates.codeFrezeDate}}"></countdown>
+          <countdown units="Days | Hours | Minutes | Seconds" end="{{currentSprint.codeFrezeDate}}"></countdown>
         </div>
 
       </div>
@@ -63,7 +68,7 @@
             <tbody>
               <tr>
                 <td>Current Sprint</td>
-                <td>46</td>
+                <td>{{currentSprint.sprint}}</td>
               </tr>
               <tr>
                 <td>Days Remaining</td>
@@ -71,23 +76,23 @@
               </tr>
               <tr>
                 <td>Start Date</td>
-                <td>{{importantDates.startDate}}</td>
+                <td>{{currentSprint.startDate}}</td>
               </tr>
               <tr>
                 <td>End Date</td>
-                <td>{{importantDates.endDate}}</td>
+                <td>{{currentSprint.endDate}}</td>
               </tr>
               <tr>
                 <td>Code Fereze</td>
-                <td>{{importantDates.codeFrezeDate}}</td>
+                <td>{{currentSprint.codeFrezeDate}}</td>
               </tr>
               <tr>
                 <td>Regression</td>
-                <td>{{importantDates.regressionDate}}</td>
+                <td>{{currentSprint.regressionDate}}</td>
               </tr>
               <tr>
                 <td>Hand Over</td>
-                <td>{{importantDates.handOverDate}}</td>
+                <td>{{currentSprint.handOverDate}}</td>
               </tr>
             </tbody>
           </table>
