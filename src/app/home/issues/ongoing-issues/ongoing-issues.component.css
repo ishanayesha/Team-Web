@@ -4,10 +4,22 @@ a{
     cursor: pointer;
 }
 
+hr{
+    color: beige;
+    height: 1px;
+}
+
+.name-list>div :hover{
+    color: #617AFE;
+}
+
 .name-list{
     min-height: 200px;
     min-width: 238px;
     position: absolute;
     z-index: 10;
     background: #d9dfeb;
+    -webkit-box-shadow: 5px 9px 25px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 9px 25px -3px rgba(0,0,0,0.75);
+    box-shadow: 5px 9px 25px -3px rgba(0,0,0,0.75);
 }

@@ -45,11 +45,12 @@
             <td>
 
               <div #lll *ngIf="devList" class="name-list">
-                <div style="padding: 2em">
-                  <div *ngFor="let member of team | membersSearch:'qa':dev">
-                    <p>
+                <div style="padding: 1em">
+                  <div *ngFor="let member of team | membersSearch:'dev':dev">
+                    <p (click)="selectMember('dev',member.firstName +' '+ member.lastName)">
                       <a>{{member.firstName}} {{member.lastName}}</a>
                     </p>
+                    <hr>
                   </div>
                 </div>
               </div>

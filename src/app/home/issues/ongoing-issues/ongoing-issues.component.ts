@@ -41,7 +41,7 @@ export class OngoingIssuesComponent implements OnInit {
     this.showFilters = !this.showFilters;
   }
 
-  setFilterVal(column, text) {
+  setFilterVal(column: string, text: string) {
     this.filterColumn = column;
     this.searchText = text;
 
@@ -84,6 +84,13 @@ export class OngoingIssuesComponent implements OnInit {
       this.ascending = !this.ascending;
     }
     this.orderColumn = column;
+  }
+
+  selectMember(column: string, member: string) {
+    this.dev = member;
+    this.searchText = member;
+    this.devList = false;
+    this.qaList = false;
   }
 
 }
