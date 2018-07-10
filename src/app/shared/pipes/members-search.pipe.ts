@@ -15,7 +15,9 @@ export class MembersSearchPipe implements PipeTransform {
       function (members) {
         return (members.role.toLowerCase() == (role.toLowerCase()) &&
           (members.firstName.toLowerCase().includes(searchText.toLowerCase())
-            || members.lastName.toLowerCase().includes(searchText.toLowerCase())));
+            || members.lastName.toLowerCase().includes(searchText.toLowerCase())
+            || (members.firstName.toLowerCase() + " " + members.lastName.toLowerCase()).includes(searchText.toLowerCase())
+          ));
       }
     );
   }

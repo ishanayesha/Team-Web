@@ -5,14 +5,29 @@ import { Issue } from '../models/Issue';
 
 export class IssuesSearchFilter implements PipeTransform {
 
-    transform(issues: Issue[],column:string, searchText: string): Issue[] {
-        
+    transform(issues: Issue[], column: string, searchText: string): Issue[] {
+
         if (!searchText) return issues;
-        if(!issues || issues === undefined || issues.length === 0) return null;
-       
+        if (!issues || issues === undefined || issues.length === 0) return null;
+
         return issues.filter(
-            function(issue){
-                return issue[column].toLowerCase().includes(searchText.toLowerCase());
+            function (issue) {
+
+
+
+                
+
+                if (column.toLowerCase() == "dev" || column.toLowerCase() == "qa"){
+                 
+                    console.log(issue[column].toLowerCase()+"col");
+                    console.log(searchText.toLowerCase());
+                 
+                    return issue[column].toLowerCase() === searchText.toLowerCase();
+
+
+                }
+                else
+                    return issue[column].toLowerCase().includes(searchText.toLowerCase());
             }
         );
     }

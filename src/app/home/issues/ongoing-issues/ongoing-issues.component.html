@@ -28,16 +28,16 @@
         <table id="filter-table" class="table" *ngIf="showFilters">
           <tr class="filter-text-fileds">
             <th>
-              <input type="text" [(ngModel)]="jiraId" (input)="setFilterVal('jiraId',$event.target.value)" class="form-control" placeholder="Jira Id">
+              <input type="text" [(ngModel)]="jiraId" (input)="setFilterVal('jiraId',$event.target.value,true)" class="form-control" placeholder="Jira Id">
             </th>
             <th>
-              <input type="text" [(ngModel)]="dev" (input)="setFilterVal('dev',$event.target.value)" class="form-control" placeholder="Dev">
+              <input type="text" [(ngModel)]="dev" (input)="setFilterVal('dev',$event.target.value,false)" class="form-control" placeholder="Dev">
             </th>
             <th>
-              <input type="text" [(ngModel)]="qa" (input)="setFilterVal('qa',$event.target.value)" class="form-control" placeholder="QA">
+              <input type="text" [(ngModel)]="qa" (input)="setFilterVal('qa',$event.target.value,false)" class="form-control" placeholder="QA">
             </th>
             <th>
-              <input type="text" [(ngModel)]="type" (input)="setFilterVal('type',$event.target.value)" class="form-control" placeholder="Type">
+              <input type="text" [(ngModel)]="type" (input)="setFilterVal('type',$event.target.value,true)" class="form-control" placeholder="Type">
             </th>
           </tr>
           <tr>
@@ -47,7 +47,7 @@
               <div #lll *ngIf="devList" class="name-list">
                 <div style="padding: 1em">
                   <div *ngFor="let member of team | membersSearch:'dev':dev">
-                    <p (click)="selectMember('dev',member.firstName +' '+ member.lastName)">
+                    <p (click)="selectMember('dev',member.firstName,member.lastName)">
                       <a>{{member.firstName}} {{member.lastName}}</a>
                     </p>
                     <hr>

@@ -41,13 +41,17 @@ export class OngoingIssuesComponent implements OnInit {
     this.showFilters = !this.showFilters;
   }
 
-  setFilterVal(column: string, text: string) {
+  setFilterVal(column: string, text: string, effectTolist: boolean) {
     this.filterColumn = column;
-    this.searchText = text;
+
+    if (effectTolist) {
+      this.searchText = text;
+    }
 
     if (!text) {
       this.devList = false;
       this.qaList = false;
+      this.searchText = null;
     }
     else {
 
@@ -86,9 +90,9 @@ export class OngoingIssuesComponent implements OnInit {
     this.orderColumn = column;
   }
 
-  selectMember(column: string, member: string) {
-    this.dev = member;
-    this.searchText = member;
+  selectMember(column: string, firstName: string, lastName: string) {
+    this.dev = firstName + " " + lastName;
+    this.searchText = firstName + " " + lastName;
     this.devList = false;
     this.qaList = false;
   }
