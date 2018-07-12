@@ -13,21 +13,12 @@ export class IssuesSearchFilter implements PipeTransform {
         return issues.filter(
             function (issue) {
 
-
-
-                
-
-                if (column.toLowerCase() == "dev" || column.toLowerCase() == "qa"){
-                 
-                    console.log(issue[column].toLowerCase()+"col");
-                    console.log(searchText.toLowerCase());
-                 
+                if (column.toLowerCase() == "dev" || column.toLowerCase() == "qa") {
                     return issue[column].toLowerCase() === searchText.toLowerCase();
-
-
                 }
-                else
+                else {
                     return issue[column].toLowerCase().includes(searchText.toLowerCase());
+                }
             }
         );
     }

@@ -35,16 +35,23 @@
             </th>
             <th>
               <input type="text" [(ngModel)]="qa" (input)="setFilterVal('qa',$event.target.value,false)" class="form-control" placeholder="QA">
+              <!-- todo
+            <input type="text" [(ngModel)]="qa" (input)="setFilterVal('qa',$event.target.value,false)" (focusout)="hideQAList()" class="form-control"
+             placeholder="QA">
+            </div>-->
             </th>
             <th>
-              <input type="text" [(ngModel)]="type" (input)="setFilterVal('type',$event.target.value,true)" class="form-control" placeholder="Type">
+              <!-- <input type="text" [(ngModel)]="type" (input)="setFilterVal('type',$event.target.value,true)" class="form-control" placeholder="Type"> -->
+              <select class="form-control">
+                <option value="">ssssssssssssssssssssssssssssssssssdsdsdsada</option>
+             </select>
             </th>
           </tr>
           <tr>
             <td></td>
-            <td>
 
-              <div #lll *ngIf="devList" class="name-list">
+            <td>
+              <div *ngIf="devList" class="name-list">
                 <div style="padding: 1em">
                   <div *ngFor="let member of team | membersSearch:'dev':dev">
                     <p (click)="selectMember('dev',member.firstName,member.lastName)">
@@ -54,9 +61,22 @@
                   </div>
                 </div>
               </div>
-
             </td>
-            <td></td>
+
+
+            <td>
+              <div *ngIf="qaList" class="name-list">
+                <div style="padding: 1em">
+                  <div *ngFor="let member of team | membersSearch:'qa':dev">
+                    <p (click)="selectMember('qa',member.firstName,member.lastName)">
+                      <a>{{member.firstName}} {{member.lastName}}</a>
+                    </p>
+                    <hr>
+                  </div>
+                </div>
+              </div>
+            </td>
+
             <td></td>
           </tr>
         </table>

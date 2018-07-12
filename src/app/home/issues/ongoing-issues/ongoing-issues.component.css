@@ -1,6 +1,5 @@
 a{
     text-decoration: none;
-    color: black;
     cursor: pointer;
 }
 
@@ -9,8 +8,12 @@ hr{
     height: 1px;
 }
 
-.name-list>div :hover{
+.name-list>div a:hover{
     color: #617AFE;
+}
+
+.name-list>div a{
+    color: black;
 }
 
 .name-list{
@@ -18,7 +21,7 @@ hr{
     min-width: 238px;
     position: absolute;
     z-index: 10;
-    background: #d9dfeb;
+    background: #E8E8E8;
     -webkit-box-shadow: 5px 9px 25px -3px rgba(0,0,0,0.75);
     -moz-box-shadow: 5px 9px 25px -3px rgba(0,0,0,0.75);
     box-shadow: 5px 9px 25px -3px rgba(0,0,0,0.75);

@@ -11,7 +11,7 @@ import { User } from '../../../shared/models/User';
 })
 export class OngoingIssuesComponent implements OnInit {
 
-  showFilters: boolean = true;
+  showFilters: boolean = false;
   issues: Issue[] = [];
   team: User[] = [];
 
@@ -26,7 +26,7 @@ export class OngoingIssuesComponent implements OnInit {
   qaList: boolean = false;
 
   orderColumn: string = null;
-  ascending: boolean = null;
+  ascending: boolean = true;
   constructor(private issueService: IssueService, private userService: UserService) { }
 
   ngOnInit() {
@@ -35,6 +35,9 @@ export class OngoingIssuesComponent implements OnInit {
 
     //load members
     this.userService.getAllUsers().subscribe(data => this.team = data);
+
+    this.ascending = true;
+    this.orderColumn = "jiraId";
   }
 
   filtersVisibility() {
@@ -44,11 +47,13 @@ export class OngoingIssuesComponent implements OnInit {
   setFilterVal(column: string, text: string, effectTolist: boolean) {
     this.filterColumn = column;
 
+    //filter apply to table or not
     if (effectTolist) {
       this.searchText = text;
     }
 
     if (!text) {
+      //hide list when text is empty
       this.devList = false;
       this.qaList = false;
       this.searchText = null;
@@ -82,19 +87,33 @@ export class OngoingIssuesComponent implements OnInit {
 
   setOrderByVal(column) {
 
-    if (this.ascending == null) {
-      this.ascending = true;
-    } else {
-      this.ascending = !this.ascending;
-    }
+    this.ascending = !this.ascending;
     this.orderColumn = column;
   }
 
   selectMember(column: string, firstName: string, lastName: string) {
-    this.dev = firstName + " " + lastName;
+alert("ssss")
+    if (column == "dev") {
+      this.dev = firstName + " " + lastName;
+    } console.log("qa");
+
+    if (column == "qa") {
+      this.qa = firstName + " " + lastName;
+      console.log(this.qa+"qa");
+      
+    }
+
     this.searchText = firstName + " " + lastName;
     this.devList = false;
     this.qaList = false;
   }
+
+  // hideDevList() {
+  //   this.devList = false;
+  // }
+
+  // hideQAList() {
+  //   this.qaList = false;
+  // }
 
 }

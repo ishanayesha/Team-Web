@@ -6,12 +6,12 @@ import { Issue } from '../models/Issue';
 })
 export class SortIssuesPipe implements PipeTransform {
 
-  transform(issues: Issue[], column: string, async: boolean): Issue[] {
+  transform(issues: Issue[], column: string, ascending: boolean): Issue[] {
     if (!issues || issues === undefined || issues.length === 0) return null;
-
+    
     issues.sort((a: Issue, b: Issue) => {
 
-      if (async) {
+      if (ascending) {
         if (a[column] < b[column]) {
           return -1;
         } else if (a[column] > b[column]) {
