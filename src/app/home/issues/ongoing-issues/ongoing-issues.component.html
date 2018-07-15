@@ -28,13 +28,16 @@
         <table id="filter-table" class="table" *ngIf="showFilters">
           <tr class="filter-text-fileds">
             <th>
-              <input type="text" [(ngModel)]="jiraId" (input)="setFilterVal('jiraId',$event.target.value,true)" class="form-control" placeholder="Jira Id">
+              <input type="text" [(ngModel)]="jiraId" (click)="clearSearchText('jiraId')" (input)="setFilterVal('jiraId',$event.target.value,true)"
+                class="form-control" placeholder="Jira Id">
             </th>
             <th>
-              <input type="text" [(ngModel)]="dev" (input)="setFilterVal('dev',$event.target.value,false)" class="form-control" placeholder="Dev">
+              <input type="text" [(ngModel)]="dev" (click)="clearSearchText('dev')" (input)="setFilterVal('dev',$event.target.value,false)"
+                class="form-control" placeholder="Dev">
             </th>
             <th>
-              <input type="text" [(ngModel)]="qa" (input)="setFilterVal('qa',$event.target.value,false)" class="form-control" placeholder="QA">
+              <input type="text" [(ngModel)]="qa" (click)="clearSearchText('qa')" (input)="setFilterVal('qa',$event.target.value,false)" class="form-control"
+                placeholder="QA">
               <!-- todo
             <input type="text" [(ngModel)]="qa" (input)="setFilterVal('qa',$event.target.value,false)" (focusout)="hideQAList()" class="form-control"
              placeholder="QA">
@@ -42,8 +45,12 @@
             </th>
             <th>
               <!-- <input type="text" [(ngModel)]="type" (input)="setFilterVal('type',$event.target.value,true)" class="form-control" placeholder="Type"> -->
-              <select class="form-control">
-                <option value="">ssssssssssssssssssssssssssssssssssdsdsdsada</option>
+              <select [(ngModel)]="type" (change)="setFilterVal('type',$event.target.value,true)" class="form-control">
+                <option [selected]="type==''" value="">Select Jira Type</option>
+                <option value="H2H Change">H2H Change</option>
+                <option value="Aviation">Aviation</option>
+                <option value="Local Issue">Local Issue</option>
+                <option value="Production Issue">Production Issue</option>
              </select>
             </th>
           </tr>
@@ -67,7 +74,7 @@
             <td>
               <div *ngIf="qaList" class="name-list">
                 <div style="padding: 1em">
-                  <div *ngFor="let member of team | membersSearch:'qa':dev">
+                  <div *ngFor="let member of team | membersSearch:'qa':qa">
                     <p (click)="selectMember('qa',member.firstName,member.lastName)">
                       <a>{{member.firstName}} {{member.lastName}}</a>
                     </p>

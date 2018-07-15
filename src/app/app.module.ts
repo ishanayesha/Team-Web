@@ -67,6 +67,7 @@ import { AuthGuard } from './shared/guards/auth.guard';
 import { IssuesSearchFilter } from './shared/pipes/issues-search.pipe';
 import { SortIssuesPipe } from './shared/pipes/sort-issues.pipe';
 import { MembersSearchPipe } from './shared/pipes/members-search.pipe';
+import { TimelineFilterPipe } from './shared/pipes/timeline-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -92,7 +93,8 @@ import { MembersSearchPipe } from './shared/pipes/members-search.pipe';
     LeaveSheetComponent,
     IssuesSearchFilter,
     SortIssuesPipe,
-    MembersSearchPipe
+    MembersSearchPipe,
+    TimelineFilterPipe
   ],
   imports: [
     BrowserModule,

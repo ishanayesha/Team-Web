@@ -1,5 +1,5 @@
 export class Issue {
-    jiraId: number;
+    jiraId: string;
     theme: string;
     type: string;
     summary: string;

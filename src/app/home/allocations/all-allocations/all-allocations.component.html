@@ -41,7 +41,9 @@
         </tr>
       </table>
 
-      <app-timeline-chart [data]="data2" [config]="config2" [elementId]="elementId2"></app-timeline-chart>
+      <ng-template [ngIf]="timelineData?.length>0">
+        <app-timeline-chart [data]="timelineData | timelineFilter:'id':'VH'" [config]="config" [elementId]="elementId"></app-timeline-chart>
+      </ng-template>
 
     </div>
   </div>

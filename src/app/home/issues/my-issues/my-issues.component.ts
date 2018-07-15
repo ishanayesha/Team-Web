@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IssueService } from '../../../shared/services/issue.service';
+import { UserService } from '../../../shared/services/user.service';
 import { Issue } from '../../../shared/models/Issue';
 
 @Component({
@@ -10,12 +11,15 @@ import { Issue } from '../../../shared/models/Issue';
 export class MyIssuesComponent implements OnInit {
 
   issues: Issue[] = [];
+  userRole: string = null;
 
-  constructor(private issueService: IssueService) { }
+  constructor(private issueService: IssueService, private userService: UserService) { }
 
   ngOnInit() {
     //todo
-    let userId: number=1;
+    this.userRole = "dev";
+
+    let userId: number = 1;
     this.issueService.getMyIssues(userId).subscribe(data => this.issues = data);
   }
 

@@ -3,9 +3,11 @@ a{
     cursor: pointer;
 }
 
-hr{
-    color: beige;
+hr {
+    border: 0;
     height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
 
 .name-list>div a:hover{

@@ -38,6 +38,7 @@ export class OngoingIssuesComponent implements OnInit {
 
     this.ascending = true;
     this.orderColumn = "jiraId";
+    this.type = "";
   }
 
   filtersVisibility() {
@@ -64,23 +65,29 @@ export class OngoingIssuesComponent implements OnInit {
         this.dev = '';
         this.qa = '';
         this.type = '';
+        this.devList = false;
+        this.qaList = false;
       }
       else if (column == 'dev') {
         this.jiraId = '';
         this.qa = '';
         this.type = '';
         this.devList = true;
+        this.qaList = false;
       }
       else if (column == 'qa') {
         this.dev = '';
         this.jiraId = '';
         this.type = '';
         this.qaList = true;
+        this.devList = false;
       }
       else if (column == 'type') {
         this.dev = '';
         this.qa = '';
         this.jiraId = '';
+        this.devList = false;
+        this.qaList = false;
       }
     }
   }
@@ -92,15 +99,13 @@ export class OngoingIssuesComponent implements OnInit {
   }
 
   selectMember(column: string, firstName: string, lastName: string) {
-alert("ssss")
+
     if (column == "dev") {
       this.dev = firstName + " " + lastName;
-    } console.log("qa");
+    }
 
     if (column == "qa") {
       this.qa = firstName + " " + lastName;
-      console.log(this.qa+"qa");
-      
     }
 
     this.searchText = firstName + " " + lastName;
@@ -108,12 +113,18 @@ alert("ssss")
     this.qaList = false;
   }
 
-  // hideDevList() {
-  //   this.devList = false;
-  // }
+  clearSearchText(filter: string) {
+    this.jiraId = "";
+    this.dev = "";
+    this.qa = "";
+    this.type = "";
+    this.searchText = "";
 
-  // hideQAList() {
-  //   this.qaList = false;
-  // }
-
+    if (filter != "dev") {
+      this.devList = false;
+    }
+    if (filter != "qa") {
+      this.qaList = false;
+    }
+  }
 }

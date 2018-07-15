@@ -16,89 +16,77 @@
     </div>
 
     <div class="page-body">
+      <ng-template [ngIf]="(issues?.length)>0" [ngIfElse]="noResult">
 
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Jira ID</th>
-            <th>Theme</th>
-            <th>Type</th>
-            <th>Jiara Summary</th>
-            <th style="text-align: center">Status</th>
-            <th>Dev</th>
-            <th>QA</th>
-            <th>Dev Start</th>
-            <th>Dev End</th>
-            <th>QA Start</th>
-            <th>QA End</th>
-            <!-- <th style="text-align: center">Allocation</th> -->
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>VH-7260</td>
-            <td>H2H Change Requests</td>
-            <td>Production Issue</td>
-            <td>Pegasus Booking the Incorrect Rate Code</td>
-            <td style="background: #FA4005;text-align: center">Open</td>
-            <td>Ishan</td>
-            <td>Ishan</td>
-            <td class="center-align">2018-01-01</td>
-            <td class="center-align">2018-01-01</td>
-            <td class="center-align">2018-01-01</td>
-            <td class="center-align">2018-01-01</td>
-            <!-- 
-            <td style="text-align: center"><i class="glyphicon glyphicon-new-window"></i></td> -->
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>VH-7260</td>
-            <td>H2H Change Requests</td>
-            <td>Production Issue</td>
-            <td>Pegasus Booking the Incorrect Rate Code</td>
-            <td style="background: #FA4005;text-align: center">Open</td>
-            <td>Ishan</td>
-            <td>Ishan</td>
-            <td class="center-align">2018-01-01</td>
-            <td class="center-align">2018-01-01</td>
-            <td class="center-align">2018-01-01</td>
-            <td class="center-align">2018-01-01</td>
-            <!-- <td style="background: #63BF07;text-align: center">Open</td>
-            <td style="text-align: center"><i class="glyphicon glyphicon-new-window"></i></td> -->
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>VH-7260</td>
-            <td>H2H Change Requests</td>
-            <td>Production Issue</td>
-            <td>Pegasus Booking the Incorrect Rate Code</td>
-            <td style="background: #FA4005;text-align: center">Open</td>
-            <td>Ishan</td>
-            <td>Ishan</td>
-            <td class="center-align">2018-01-01</td>
-            <td class="center-align">2018-01-01</td>
-            <td class="center-align">2018-01-01</td>
-            <td class="center-align">2018-01-01</td>
-            <!-- <td style="background: #EDB506;text-align: center">Open</td>
-            <td style="text-align: center"><i class="glyphicon glyphicon-new-window"></i></td> -->
-          </tr>
-        </tbody>
-      </table>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Jira ID</th>
+              <th>Theme</th>
+              <th>Type</th>
+              <th>Jiara Summary</th>
+              <th style="text-align: center">Status</th>
+              <th>Dev</th>
+              <th>QA</th>
 
-      <div class="row">
-        <div class="col-md-12 sub-topic">
-          <!-- <div class="line"></div> -->
-          <h4>
-            <i class="fa fa-clock-o" aria-hidden="true"></i> Time Line
-          </h4>
-          <!-- <div class="line"></div> -->
+              <ng-template [ngIf]="userRole=='dev'">
+                <th>Dev Start</th>
+                <th>Dev End</th>
+              </ng-template>
+
+              <ng-template [ngIf]="userRole=='qa'">
+                <th>QA Start</th>
+                <th>QA End</th>
+              </ng-template>
+              <!-- <th style="text-align: center">Allocation</th> -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let issue of issues;let i=index">
+              <td>{{i+1}}</td>
+              <td><a target="#" href="{{issue.jiraIdLink}}">{{issue.jiraId}}</a></td>
+              <td>{{issue.theme}}</td>
+              <td>{{issue.type}}</td>
+              <td>{{issue.summary}}</td>
+              <td style="background: #FA4005;" class="center-text">{{issue.status}}</td>
+              <td>{{issue.dev}}</td>
+              <td>{{issue.qa}}</td>
+
+              <ng-template [ngIf]="userRole=='dev'">
+                <td>2018-01-01</td>
+                <td>2018-01-01</td>
+              </ng-template>
+
+              <ng-template [ngIf]="userRole=='qa'">
+                <td class="center-align">2018-01-01</td>
+                <td class="center-align">2018-01-01</td>
+              </ng-template>
+              <!-- 
+            <td style="text-align: center"><i class="glyphicon glyphicon-new-window"></i></td> -->
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="row">
+          <div class="col-md-12 sub-topic">
+            <!-- <div class="line"></div> -->
+            <h4>
+              <i class="fa fa-clock-o" aria-hidden="true"></i> Time Line
+            </h4>
+            <!-- <div class="line"></div> -->
+          </div>
         </div>
-      </div>
 
-      <app-timeline-chart [data]="data2" [config]="config2" [elementId]="elementId2"></app-timeline-chart>
+        <ng-template [ngIf]="timelineData">
+          <app-timeline-chart [data]="timelineData" [config]="config" [elementId]="elementId"></app-timeline-chart>
+        </ng-template>
 
+      </ng-template>
+
+      <ng-template #noResult>
+        No results found
+      </ng-template>
     </div>
   </div>
 </div>

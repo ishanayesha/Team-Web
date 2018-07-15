@@ -21,20 +21,31 @@ export class GoogleChartsBaseService {
     var func = (chartFunc, options) => {
       var datatable = new google.visualization.DataTable();
 
+      // datatable.addColumn({ type: 'string', id: 'JiraId' });
       datatable.addColumn({ type: 'string', id: 'Role' });
       datatable.addColumn({ type: 'string', id: 'Name' });
       datatable.addColumn({ type: 'date', id: 'Start' });
       datatable.addColumn({ type: 'date', id: 'End' });
 
-      datatable.addRows([
-        ['VH-7260', 'George Washington', new Date(2018, 5, 13), new Date(2018, 5, 15)],
-        ['VH-7260', 'Thomas Jefferson', new Date(2018, 5, 15), new Date(2018, 5, 16)]]);
-      datatable.addRows([
-        ['VH-7262', 'George Washington', new Date(2018, 5, 15), new Date(2018, 5, 16)],
-        ['VH-7262', 'Thomas Jefferson', new Date(2018, 5, 17), new Date(2018, 5, 20)]]);
-      datatable.addRows([
-        ['VH-7263', 'George Washington', new Date(2018, 5, 16), new Date(2018, 5, 18)],
-        ['VH-7263', 'Thomas Jefferson', new Date(2018, 5, 21), new Date(2018, 5, 22)]]);
+      for (let entry of data) {
+
+        let startDate: Date = new Date(entry['start'] + "T00:00:00+05:30");
+        let endDate: Date = new Date(entry['end'] + "T23:59:00+05:30");
+
+         console.log( entry['role']);
+        // console.log(endDate + "end");
+
+        datatable.addRows([
+          [entry['id'], entry['user'], startDate, endDate]]);
+
+      }
+
+      // datatable.addRows([
+      //   ['VH-7262', 'George Washington', new Date(2018, 5, 15), new Date(2018, 5, 16)],
+      //   ['VH-7262', 'Thomas Jefferson', new Date(2018, 5, 17), new Date(2018, 5, 20)]]);
+      // datatable.addRows([
+      //   ['VH-7263', 'George Washington', new Date(2018, 5, 16), new Date(2018, 5, 18)],
+      //   ['VH-7263', 'Thomas Jefferson', new Date(2018, 5, 21), new Date(2018, 5, 22)]]);
 
       chartFunc().draw(datatable, options);
     };

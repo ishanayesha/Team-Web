@@ -31,14 +31,14 @@
                   <th>Jiara Summary</th>
                   <th style="text-align: center">Status</th>
 
-                  <ng-template [ngIf]="(issues[0].dev)">
+                  <ng-template [ngIf]="userRole=='qa'">
                     <th>Dev</th>
                     <th>Rec/TCW Est</th>
                     <th>Testing Est</th>
                     <th>Total QA Est</th>
                   </ng-template>
 
-                  <ng-template [ngIf]="(issues[0].qa)">
+                  <ng-template [ngIf]="userRole=='dev'">
                     <th>QA</th>
                     <th>Analysis Est</th>
                     <th>Dev Est</th>
@@ -57,14 +57,14 @@
                   <td>{{issue.summary}}</td>
                   <td style="background: #FA4005;text-align: center">{{issue.status}}</td>
 
-                  <ng-template [ngIf]="(issues[0].dev)">
+                  <ng-template [ngIf]="userRole=='qa'">
                     <td>{{issue.dev}}</td>
                     <td class="center-align">{{issue.qaAnalysis}}</td>
                     <td class="center-align">{{issue.qaEstimate}}</td>
                     <td class="center-align qa-column-color">4</td>
                   </ng-template>
 
-                  <ng-template [ngIf]="(issues[0].qa)">
+                  <ng-template [ngIf]="userRole=='dev'">
                     <td>{{issue.qa}}</td>
                     <td class="center-align">{{issue.devAnalysis}}</td>
                     <td class="center-align">{{issue.devEstimate}}</td>

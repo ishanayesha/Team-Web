@@ -196,8 +196,14 @@ a, a:hover, a:focus {
 
 
 /* issues allocations table styles start*/
+
+#filter-table { 
+    table-layout: fixed;
+}
+
 #filter-table th{
     border-top: none !important;
+    width: 33%;
 }
 
 .filter-text-fileds{
@@ -210,15 +216,15 @@ a, a:hover, a:focus {
 }
 
 .dev-column-color{
-    background: #8FFE8B;
+    background: #28BF68;
 }
 
 .qa-column-color{
-    background: #FBE555;
+    background: #F1DF24;
 }
 
 .tot-effort-column-color{
-    background: #96E3FE;
+    background: #4BC6F0;
 }
 /* issues allocations table styles end*/
 

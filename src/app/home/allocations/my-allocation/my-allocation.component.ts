@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AllocationService } from '../../../shared/services/allocation.service';
+import { Issue } from '../../../shared/models/Issue';
 
 import { TimelineChartConfig } from '../../../shared/models/TimelineChartConfig';
 
@@ -9,25 +11,62 @@ import { TimelineChartConfig } from '../../../shared/models/TimelineChartConfig'
 })
 export class MyAllocationComponent implements OnInit {
 
-  data2: any[];
-  config2: TimelineChartConfig;
-  elementId2: String;
+  timelineData: any[];
+  config: TimelineChartConfig;
+  elementId: String;
 
-  constructor() { }
+  issues: Issue[] = [];
+  userRole: string = null;
+
+  myAllocationsArr: { id: string, role: string, user: string, start: string, end: string }[] = [];
+
+  constructor(private allocationService: AllocationService) { }
 
   ngOnInit() {
+    //todo
+    this.userRole = "dev";
+    let userId: number = 1;
 
-    //Timeline Data & Config
-    this.data2 = [['Task', 'Hours per Day'],
-    ['Eat', 3],
-    ['Eat', 2],
-    ['Watch TV', 5],
-    ['Video games', 4],
-    ['Eat', 10]];
+    this.allocationService.getMyAllocations(userId).subscribe(data => {
+      this.issues = data;
 
-    this.config2 = new TimelineChartConfig(false, [{groupByRowLabel: true}]);
-    this.elementId2 = 'myPieChart2';
+      for (let issue of data) {
 
+        if (issue.dev != "N/A") {
+
+          let dev = {
+            "id": issue.jiraId,
+            "role": "dev",
+            "user": issue.dev,
+            "start": issue.devStart,
+            "end": issue.devEnd
+          };
+          this.myAllocationsArr.push(dev);
+        }
+
+        if (issue.qa != "N/A") {
+
+          let qa = {
+            "id": issue.jiraId,
+            "role": "qa",
+            "user": issue.qa,
+            "start": issue.qaStart,
+            "end": issue.qaEnd
+          };
+          this.myAllocationsArr.push(qa);
+        }
+      }
+
+
+      //Timeline Data & Config
+      this.timelineData = this.myAllocationsArr;
+
+      this.config = new TimelineChartConfig(false, [{ groupByRowLabel: true }]);
+      this.elementId = 'myTimeLine';
+
+    });
   }
+
+
 
 }

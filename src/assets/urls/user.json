@@ -10,9 +10,9 @@
         "skypeId": "ishanayesha"
     },
     {
-        "id": 1,
-        "firstName": "Saman",
-        "lastName": "Kumara",
+        "id": 2,
+        "firstName": "Ashan",
+        "lastName": "Saliya",
         "email": "ishana@codegen.net",
         "designation": "Associate Software Engineer",
         "role": "qa",
@@ -20,7 +20,7 @@
         "skypeId": "ishanayesha"
     },
     {
-        "id": 1,
+        "id": 3,
         "firstName": "Kuma",
         "lastName": "Saman",
         "email": "ishana@codegen.net",
@@ -30,7 +30,7 @@
         "skypeId": "ishanayesha"
     },
     {
-        "id": 1,
+        "id": 4,
         "firstName": "Kumara",
         "lastName": "Saman",
         "email": "ishana@codegen.net",
