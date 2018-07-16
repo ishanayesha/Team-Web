@@ -45,6 +45,23 @@
         <app-timeline-chart [data]="timelineData | timelineFilter:'id':'VH'" [config]="config" [elementId]="elementId"></app-timeline-chart>
       </ng-template>
 
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Jira ID</th>
+            <th *ngFor="let date of dates" scope="col">{{date}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of timelineData">
+            <td>{{data.id}}</td>
+            <td *ngFor="let date of dates" scope="col"></td>
+          </tr>
+        </tbody>
+      </table>
+
     </div>
+
   </div>
 </div>

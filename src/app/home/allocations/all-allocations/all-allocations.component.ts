@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AllocationService } from '../../../shared/services/allocation.service';
+import { UtilsService } from '../../../shared/services/utils.service';
 import { Issue } from '../../../shared/models/Issue';
 
 import { TimelineChartConfig } from '../../../shared/models/TimelineChartConfig';
@@ -17,10 +18,14 @@ export class AllAllocationsComponent implements OnInit {
   config: TimelineChartConfig;
   elementId: String;
 
+
+  startDate = new Date("2018-01-20"); //YYYY-MM-DD
+  endDate = new Date("2018-01-22"); //YYYY-MM-DD
+
   allAllocationsArr: { id: string, role: string, user: string, start: string, end: string }[] = [];
+  dates: string[] = [];
 
-
-  constructor(private allocationService: AllocationService) { }
+  constructor(private allocationService: AllocationService, private utilsService: UtilsService) { }
 
   ngOnInit() {
 
@@ -61,6 +66,9 @@ export class AllAllocationsComponent implements OnInit {
       this.elementId = 'timeLineAll';
 
     });
+
+    //get sprint plan
+    this.dates = this.utilsService.getDateArray(this.startDate, this.endDate);
   }
 
   filtersVisibility() {

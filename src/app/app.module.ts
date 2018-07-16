@@ -60,6 +60,9 @@ import { DashboardService } from './shared/services/dashboard.service';
 //auth
 import { AuthService } from './shared/services/auth.service';
 
+//utils
+import { UtilsService } from './shared/services/utils.service';
+
 //guards
 import { AuthGuard } from './shared/guards/auth.guard';
 
@@ -114,7 +117,8 @@ import { TimelineFilterPipe } from './shared/pipes/timeline-filter.pipe';
     AllocationService,
     DashboardService,
     ErrorHandlerService,
-    DatePipe
+    DatePipe,
+    UtilsService
   ],
   bootstrap: [AppComponent]
 })
