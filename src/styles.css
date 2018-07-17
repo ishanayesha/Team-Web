@@ -1,3 +1,35 @@
+/* tooltip start*/
+.my-tooltip {
+    position: relative;
+}
+
+.my-tooltip .tooltiptext {
+    visibility: hidden;
+    min-width: 420px;
+    min-height: 220px;    
+    background-color: rgb(243, 243, 243);
+    color: black;
+    text-align: left;
+    border-radius: 6px;
+    padding: 5px;
+
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+
+    /* Position the tooltip */
+    position: absolute;
+    top: -50px;
+    left: 50px;
+    z-index: 1;
+}
+
+.my-tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+/* tooltip end */
+
+
 /* page heading location start*/
 ul.breadcrumb {
     padding: 10px 16px;

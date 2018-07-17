@@ -19,8 +19,8 @@ export class AllAllocationsComponent implements OnInit {
   elementId: String;
 
 
-  startDate = new Date("2018-01-20"); //YYYY-MM-DD
-  endDate = new Date("2018-01-22"); //YYYY-MM-DD
+  startDate = new Date("2018-07-18"); //YYYY-MM-DD
+  endDate = new Date("2018-07-31"); //YYYY-MM-DD
 
   allAllocationsArr: { id: string, role: string, user: string, start: string, end: string }[] = [];
   dates: string[] = [];

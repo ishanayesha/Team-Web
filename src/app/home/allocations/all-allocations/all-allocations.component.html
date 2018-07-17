@@ -55,7 +55,59 @@
         </thead>
         <tbody>
           <tr *ngFor="let data of timelineData">
-            <td>{{data.id}}</td>
+            <td>
+              <span class="my-tooltip">
+                <a>{{data.id}}</a>
+                <span class="tooltiptext">
+
+                  <table class="table table-striped" style="width: 100%">
+                    <tbody>
+                      <tr height="50">
+                        <td width="100">Theme</td>
+                        <td>MMB</td>
+                      </tr>
+
+                      <tr height="50">
+                        <td width="100">Type</td>
+                        <td>Local Issue</td>
+                      </tr>
+
+                      <tr height="50">
+                        <td width="100">Summary</td>
+                        <td>Cancellation charge on MMB doesn't conside supplier CNX chargessssssssssssssssssssssssssssssssssssssssssssssssss</td>
+                      </tr>
+
+                      <tr height="50">
+                        <td width="100">Status</td>
+                        <td>In Progress</td>
+                      </tr>
+
+                      <tr height="50">
+                        <td width="100">Dev</td>
+                        <td>Ishan Ayesha</td>
+                      </tr>
+
+                      <tr height="50">
+                        <td width="100">QA</td>
+                        <td>Saman Kumara</td>
+                      </tr>
+
+                      <tr height="50">
+                        <td width="100">Dev Est</td>
+                        <td>03</td>
+                      </tr>
+
+                      <tr height="50">
+                        <td width="100">QA Est</td>
+                        <td>03</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                </span>
+              </span>
+            </td>
             <td *ngFor="let date of dates" scope="col"></td>
           </tr>
         </tbody>
