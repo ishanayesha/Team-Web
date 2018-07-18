@@ -14,16 +14,17 @@ export class AllAllocationsComponent implements OnInit {
 
   showFilters: boolean = false;
 
-  timelineData: any[];
-  config: TimelineChartConfig;
-  elementId: String;
+  // timelineData: any[];
+  // config: TimelineChartConfig;
+  // elementId: String;
 
 
   startDate = new Date("2018-07-18"); //YYYY-MM-DD
   endDate = new Date("2018-07-31"); //YYYY-MM-DD
 
-  allAllocationsArr: { id: string, role: string, user: string, start: string, end: string }[] = [];
+  // allAllocationsArr: { id: string, role: string, user: string, start: string, end: string }[] = [];
   dates: string[] = [];
+  issues: Issue[] = [];
 
   constructor(private allocationService: AllocationService, private utilsService: UtilsService) { }
 
@@ -33,39 +34,44 @@ export class AllAllocationsComponent implements OnInit {
     let userId: number = 1;
     this.allocationService.getAllAllocations().subscribe(data => {
 
-      for (let issue of data) {
+      // for (let issue of data) {
 
-        if (issue.dev != "N/A") {
+      //   if (issue.dev != "N/A") {
 
-          let dev = {
-            "id": issue.jiraId,
-            "role": "dev",
-            "user": issue.dev,
-            "start": issue.devStart,
-            "end": issue.devEnd
-          };
-          this.allAllocationsArr.push(dev);
-        }
+      //     let dev = {
+      //       "id": issue.jiraId,
+      //       "role": "dev",
+      //       "user": issue.dev,
+      //       "start": issue.devStart,
+      //       "end": issue.devEnd
+      //     };
+      //     this.allAllocationsArr.push(dev);
+      //   }
 
-        if (issue.qa != "N/A") {
+      //   if (issue.qa != "N/A") {
 
-          let qa = {
-            "id": issue.jiraId,
-            "role": "qa",
-            "user": issue.qa,
-            "start": issue.qaStart,
-            "end": issue.qaEnd
-          };
-          this.allAllocationsArr.push(qa);
-        }
-      }
+      //     let qa = {
+      //       "id": issue.jiraId,
+      //       "role": "qa",
+      //       "user": issue.qa,
+      //       "start": issue.qaStart,
+      //       "end": issue.qaEnd
+      //     };
+      //     this.allAllocationsArr.push(qa);
+      //   }
+      // }
 
-      //Timeline Data & Config
-      this.timelineData = this.allAllocationsArr;
-      this.config = new TimelineChartConfig(false, [{ groupByRowLabel: true }]);
-      this.elementId = 'timeLineAll';
+      // //Timeline Data & Config
+      // this.timelineData = this.allAllocationsArr;
+      // this.config = new TimelineChartConfig(false, [{ groupByRowLabel: true }]);
+      // this.elementId = 'timeLineAll';
+
+      console.log(data);
+
+      this.issues = data;
 
     });
+
 
     //get sprint plan
     this.dates = this.utilsService.getDateArray(this.startDate, this.endDate);
@@ -75,4 +81,26 @@ export class AllAllocationsComponent implements OnInit {
     this.showFilters = !this.showFilters;
   }
 
+  hasUnsavedNotes(date, jiraId) {
+
+    this.allocationService.getAllAllocations().subscribe(data => {
+
+      let issues: Issue[] = data;
+      let allAllocationsArr: any[] = [];
+      allAllocationsArr.push("2018-07-19");
+      allAllocationsArr.push("2018-07-20");
+
+      for (let entry of issues) {
+
+        console.log(entry.devStart);
+
+
+        if ((date == entry.devStart || date == entry.devEnd) && jiraId == entry.jiraId) {
+          return true;
+        }
+      }
+
+      return false;
+    });
+  }
 }

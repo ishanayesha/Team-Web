@@ -41,9 +41,9 @@
         </tr>
       </table>
 
-      <ng-template [ngIf]="timelineData?.length>0">
+      <!-- <ng-template [ngIf]="timelineData?.length>0">
         <app-timeline-chart [data]="timelineData | timelineFilter:'id':'VH'" [config]="config" [elementId]="elementId"></app-timeline-chart>
-      </ng-template>
+      </ng-template> -->
 
 
       <table class="table table-bordered">
@@ -54,64 +54,69 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let data of timelineData">
-            <td>
-              <span class="my-tooltip">
-                <a>{{data.id}}</a>
+          <ng-template [ngIf]="(issues?.length)>0" [ngIfElse]="noResult">
+            <tr *ngFor="let issue of issues;let i=index;">
+              <td>
+                <span class="my-tooltip">
+                <a>{{issue.jiraId}}</a>
                 <span class="tooltiptext">
 
                   <table class="table table-striped" style="width: 100%">
                     <tbody>
                       <tr height="50">
                         <td width="100">Theme</td>
-                        <td>MMB</td>
+                        <td>{{issue.theme}}</td>
                       </tr>
 
                       <tr height="50">
                         <td width="100">Type</td>
-                        <td>Local Issue</td>
+                        <td>{{issue.type}}</td>
                       </tr>
 
                       <tr height="50">
                         <td width="100">Summary</td>
-                        <td>Cancellation charge on MMB doesn't conside supplier CNX chargessssssssssssssssssssssssssssssssssssssssssssssssss</td>
+                        <td>{{issue.summary}}</td>
                       </tr>
 
                       <tr height="50">
                         <td width="100">Status</td>
-                        <td>In Progress</td>
+                        <td>{{issue.status}}</td>
                       </tr>
 
                       <tr height="50">
                         <td width="100">Dev</td>
-                        <td>Ishan Ayesha</td>
+                        <td>{{issue.dev}}</td>
                       </tr>
 
                       <tr height="50">
                         <td width="100">QA</td>
-                        <td>Saman Kumara</td>
+                        <td>{{issue.qa}}</td>
                       </tr>
 
                       <tr height="50">
                         <td width="100">Dev Est</td>
-                        <td>03</td>
+                        <td>{{issue.devEstimate}}</td>
                       </tr>
 
                       <tr height="50">
                         <td width="100">QA Est</td>
-                        <td>03</td>
+                        <td>{{issue.qaEstimate}}</td>
                       </tr>
 
                     </tbody>
                   </table>
 
                 </span>
-              </span>
-            </td>
-            <td *ngFor="let date of dates" scope="col"></td>
-          </tr>
+                </span>
+              </td>
+              <td [class.dev-column-color]="issue.devStart<=date && issue.devEnd>=date" [class.qa-column-color]="issue.qaStart<=date && issue.qaEnd>=date" *ngFor="let date of dates"></td>
+            </tr>
+          </ng-template>
         </tbody>
       </table>
+
+      <div style="height: 300px;"></div>
+
 
     </div>
 
